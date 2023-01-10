@@ -196,9 +196,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
+            this.label2.Size = new System.Drawing.Size(125, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre de la actividad";
+            this.label2.Text = "Nombre del recluso";
             // 
             // label1
             // 
