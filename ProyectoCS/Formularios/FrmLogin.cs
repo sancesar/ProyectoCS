@@ -1,4 +1,5 @@
-﻿using ProyectoCS.Metodos;
+﻿using MySql.Data.MySqlClient;
+using ProyectoCS.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,26 +21,32 @@ namespace ProyectoCS
         }
         private void Btnacep_Click(object sender, EventArgs e)
         {
-            string usuario = Txtusu.Text;
-            string clave = Txtcontr.Text;
-            Boolean contrane = false;
-            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(clave))
+            try
             {
-                MessageBox.Show("Por favor llenar todos los campos....", "Sistema");
-
-            }
-            else
-            {
-                //Mandamos a validar el usuario ingresado a ver si consta dentro de la base de datos
-                contrane = Bd.login(usuario, clave);
-                if (contrane == true)
+                string usuario = Txtusu.Text;
+                string clave = Txtcontr.Text;
+                Boolean contrane = false;
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(clave))
                 {
-                    this.Hide();
+                    MessageBox.Show("Por favor llenar todos los campos....", "Sistema");
+
                 }
                 else
                 {
-                    MessageBox.Show("Usuario/Clave incorrectas....", "Sistema");
+                    //Mandamos a validar el usuario ingresado a ver si consta dentro de la base de datos
+                    contrane = Bd.login(usuario, clave);
+                    if (contrane == true)
+                    {
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario/Clave incorrectas....", "Sistema");
+                    }
                 }
+            }catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

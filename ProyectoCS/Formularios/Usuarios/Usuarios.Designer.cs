@@ -32,8 +32,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Lblmodinf = new System.Windows.Forms.Label();
-            this.Lbleliminf = new System.Windows.Forms.Label();
+            this.Lblvinfo = new System.Windows.Forms.Label();
             this.Lblmodrepr = new System.Windows.Forms.Label();
             this.Lblnuerepr = new System.Windows.Forms.Label();
             this.Lblmodrecl = new System.Windows.Forms.Label();
@@ -83,27 +82,16 @@
             this.label8.TabIndex = 32;
             this.label8.Text = "-------------------------------------------------------------------";
             // 
-            // Lblmodinf
+            // Lblvinfo
             // 
-            this.Lblmodinf.AutoSize = true;
-            this.Lblmodinf.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblmodinf.Location = new System.Drawing.Point(197, 266);
-            this.Lblmodinf.Name = "Lblmodinf";
-            this.Lblmodinf.Size = new System.Drawing.Size(137, 16);
-            this.Lblmodinf.TabIndex = 31;
-            this.Lblmodinf.Text = "Visualizar información";
-            this.Lblmodinf.Click += new System.EventHandler(this.Lblmodinf_Click);
-            // 
-            // Lbleliminf
-            // 
-            this.Lbleliminf.AutoSize = true;
-            this.Lbleliminf.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbleliminf.Location = new System.Drawing.Point(197, 230);
-            this.Lbleliminf.Name = "Lbleliminf";
-            this.Lbleliminf.Size = new System.Drawing.Size(127, 16);
-            this.Lbleliminf.TabIndex = 30;
-            this.Lbleliminf.Text = "Eliminar información";
-            this.Lbleliminf.Click += new System.EventHandler(this.Lbleliminf_Click);
+            this.Lblvinfo.AutoSize = true;
+            this.Lblvinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblvinfo.Location = new System.Drawing.Point(197, 246);
+            this.Lblvinfo.Name = "Lblvinfo";
+            this.Lblvinfo.Size = new System.Drawing.Size(137, 16);
+            this.Lblvinfo.TabIndex = 30;
+            this.Lblvinfo.Text = "Visualizar información";
+            this.Lblvinfo.Click += new System.EventHandler(this.Lblvinfo_Click);
             // 
             // Lblmodrepr
             // 
@@ -225,8 +213,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.Lblmodinf);
-            this.Controls.Add(this.Lbleliminf);
+            this.Controls.Add(this.Lblvinfo);
             this.Controls.Add(this.Lblmodrepr);
             this.Controls.Add(this.Lblnuerepr);
             this.Controls.Add(this.Lblmodrecl);
@@ -253,8 +240,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label Lblmodinf;
-        private System.Windows.Forms.Label Lbleliminf;
+        private System.Windows.Forms.Label Lblvinfo;
         private System.Windows.Forms.Label Lblmodrepr;
         private System.Windows.Forms.Label Lblnuerepr;
         private System.Windows.Forms.Label Lblmodrecl;

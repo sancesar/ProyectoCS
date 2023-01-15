@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Dtpnac = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Txtesp = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Txtape = new System.Windows.Forms.TextBox();
+            this.Txtced = new System.Windows.Forms.TextBox();
+            this.Txtnom = new System.Windows.Forms.TextBox();
+            this.Btncancelar = new System.Windows.Forms.Button();
+            this.Btnguardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,15 +50,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.Dtpnac);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.Txtesp);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Txtape);
+            this.groupBox1.Controls.Add(this.Txtced);
+            this.groupBox1.Controls.Add(this.Txtnom);
+            this.groupBox1.Controls.Add(this.Btncancelar);
+            this.groupBox1.Controls.Add(this.Btnguardar);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -68,13 +68,13 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // dateTimePicker1
+            // Dtpnac
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 204);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.Dtpnac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtpnac.Location = new System.Drawing.Point(25, 204);
+            this.Dtpnac.Name = "Dtpnac";
+            this.Dtpnac.Size = new System.Drawing.Size(132, 22);
+            this.Dtpnac.TabIndex = 15;
             // 
             // label7
             // 
@@ -85,12 +85,12 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Fecha de Nacimiento";
             // 
-            // textBox4
+            // Txtesp
             // 
-            this.textBox4.Location = new System.Drawing.Point(207, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 22);
-            this.textBox4.TabIndex = 12;
+            this.Txtesp.Location = new System.Drawing.Point(207, 128);
+            this.Txtesp.Name = "Txtesp";
+            this.Txtesp.Size = new System.Drawing.Size(140, 22);
+            this.Txtesp.TabIndex = 12;
             // 
             // label6
             // 
@@ -101,46 +101,48 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Especialidad";
             // 
-            // textBox3
+            // Txtape
             // 
-            this.textBox3.Location = new System.Drawing.Point(25, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 22);
-            this.textBox3.TabIndex = 10;
+            this.Txtape.Location = new System.Drawing.Point(25, 128);
+            this.Txtape.Name = "Txtape";
+            this.Txtape.Size = new System.Drawing.Size(144, 22);
+            this.Txtape.TabIndex = 10;
             // 
-            // textBox2
+            // Txtced
             // 
-            this.textBox2.Location = new System.Drawing.Point(207, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 22);
-            this.textBox2.TabIndex = 7;
+            this.Txtced.Location = new System.Drawing.Point(207, 61);
+            this.Txtced.Name = "Txtced";
+            this.Txtced.Size = new System.Drawing.Size(140, 22);
+            this.Txtced.TabIndex = 7;
             // 
-            // textBox1
+            // Txtnom
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 22);
-            this.textBox1.TabIndex = 6;
+            this.Txtnom.Location = new System.Drawing.Point(25, 61);
+            this.Txtnom.Name = "Txtnom";
+            this.Txtnom.Size = new System.Drawing.Size(144, 22);
+            this.Txtnom.TabIndex = 6;
             // 
-            // button2
+            // Btncancelar
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(196, 242);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Btncancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btncancelar.Location = new System.Drawing.Point(196, 242);
+            this.Btncancelar.Name = "Btncancelar";
+            this.Btncancelar.Size = new System.Drawing.Size(75, 23);
+            this.Btncancelar.TabIndex = 5;
+            this.Btncancelar.Text = "Cancelar";
+            this.Btncancelar.UseVisualStyleBackColor = false;
+            this.Btncancelar.Click += new System.EventHandler(this.Btncancelar_Click);
             // 
-            // button1
+            // Btnguardar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(78, 242);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Btnguardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btnguardar.Location = new System.Drawing.Point(78, 242);
+            this.Btnguardar.Name = "Btnguardar";
+            this.Btnguardar.Size = new System.Drawing.Size(75, 23);
+            this.Btnguardar.TabIndex = 4;
+            this.Btnguardar.Text = "Guardar";
+            this.Btnguardar.UseVisualStyleBackColor = false;
+            this.Btnguardar.Click += new System.EventHandler(this.Btnguardar_Click);
             // 
             // label4
             // 
@@ -165,9 +167,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre de la actividad";
+            this.label2.Text = "Nombre";
             // 
             // label1
             // 
@@ -228,15 +230,15 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Dtpnac;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Txtesp;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Txtape;
+        private System.Windows.Forms.TextBox Txtced;
+        private System.Windows.Forms.TextBox Txtnom;
+        private System.Windows.Forms.Button Btncancelar;
+        private System.Windows.Forms.Button Btnguardar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

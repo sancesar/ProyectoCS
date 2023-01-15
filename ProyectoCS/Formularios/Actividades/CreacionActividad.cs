@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoCS.Metodos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace ProyectoCS.Formularios.Actividades
 {
     public partial class CreacionActividad : Form
     {
+        ConnectBDD Bd = new ConnectBDD();
         public CreacionActividad()
         {
             InitializeComponent();
@@ -22,6 +24,11 @@ namespace ProyectoCS.Formularios.Actividades
             FrmActividades FrmAct = new FrmActividades();
             FrmAct.Show();
             this.Close();
+        }
+
+        private void CmbRepr_Click(object sender, EventArgs e)
+        {
+            Bd.llenarCombo(CmbRepr);
         }
     }
 }

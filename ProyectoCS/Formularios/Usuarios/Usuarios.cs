@@ -71,17 +71,10 @@ namespace ProyectoCS.Formularios.Usuarios
             this.Close();
         }
 
-        private void Lbleliminf_Click(object sender, EventArgs e)
+        private void Lblvinfo_Click(object sender, EventArgs e)
         {
-            Eliminar Eli = new Eliminar();
+            Consultar Eli = new Consultar();
             Eli.Show();
-            this.Close();
-        }
-
-        private void Lblmodinf_Click(object sender, EventArgs e)
-        {
-            VisualizarInfo VInfo = new VisualizarInfo();
-            VInfo.Show();
             this.Close();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoCS.Metodos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ProyectoCS.Formularios.Usuarios
 {
     public partial class RegisRepresentante : Form
     {
+        ConnectBDD Bd = new ConnectBDD();
         public RegisRepresentante()
         {
             InitializeComponent();
@@ -22,6 +25,40 @@ namespace ProyectoCS.Formularios.Usuarios
             FrmUsuarios FrmUsu = new FrmUsuarios();
             FrmUsu.Show();
             this.Close();
+        }
+
+        private void Btnguardar_Click(object sender, EventArgs e)
+        {
+
+            string Nombre = Txtnom.Text;
+            string Apellido = Txtape.Text;
+            string Cedula = Txtced.Text;
+            string FechaNac = Dtpnac.Text;
+            string Especialidad = Txtesp.Text;
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Apellido) || string.IsNullOrEmpty(Cedula) || string.IsNullOrEmpty(Especialidad))
+            {
+                MessageBox.Show("Por favor llenar todos los campos....", "Sistema");
+
+            }
+            else
+            {
+                Bd.DatosRepresentante(Nombre, Apellido, Cedula, FechaNac, Especialidad);
+
+            }
+            limpiar();
+        }
+
+        private void Btncancelar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void limpiar()
+        {
+            Txtnom.Clear();
+            Txtape.Clear();
+            Txtced.Clear();
+            Txtesp.Clear();
         }
     }
 }

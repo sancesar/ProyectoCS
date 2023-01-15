@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using ProyectoCS.Metodos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,10 @@ using System.Windows.Forms;
 
 namespace ProyectoCS.Formularios.Usuarios
 {
-    public partial class Eliminar : Form
+    public partial class Consultar : Form
     {
-        public Eliminar()
+        ConnectBDD Bd = new ConnectBDD();
+        public Consultar()
         {
             InitializeComponent();
         }
@@ -22,6 +25,14 @@ namespace ProyectoCS.Formularios.Usuarios
             FrmUsuarios FrmUsu = new FrmUsuarios();
             FrmUsu.Show();
             this.Close();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            string Usuario = Cmbusuario.Text;
+            string Cedula = txtced.Text;
+
+            Bd.BuscarUsuario(Usuario, Cedula, Listper);
         }
     }
 }

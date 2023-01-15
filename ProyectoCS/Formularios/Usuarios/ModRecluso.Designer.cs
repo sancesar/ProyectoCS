@@ -29,24 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Txtfech = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Txtexp = new System.Windows.Forms.TextBox();
+            this.Txtcond = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Txtape = new System.Windows.Forms.TextBox();
+            this.Txtnom = new System.Windows.Forms.TextBox();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.btnmod = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Btnbusc = new System.Windows.Forms.Button();
+            this.TxtBusc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.LblRegr = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -55,19 +53,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.Txtfech);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.Txtexp);
+            this.groupBox1.Controls.Add(this.Txtcond);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Txtape);
+            this.groupBox1.Controls.Add(this.Txtnom);
+            this.groupBox1.Controls.Add(this.BtnCancelar);
+            this.groupBox1.Controls.Add(this.btnmod);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(28, 95);
             this.groupBox1.Name = "groupBox1";
@@ -75,85 +71,80 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // textBox7
+            // Txtfech
             // 
-            this.textBox7.Location = new System.Drawing.Point(210, 201);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 22);
-            this.textBox7.TabIndex = 15;
+            this.Txtfech.Location = new System.Drawing.Point(208, 128);
+            this.Txtfech.Name = "Txtfech";
+            this.Txtfech.Size = new System.Drawing.Size(140, 22);
+            this.Txtfech.TabIndex = 15;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(207, 171);
+            this.label7.Location = new System.Drawing.Point(205, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(135, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "Fecha de Nacimiento";
             // 
-            // textBox6
+            // Txtexp
             // 
-            this.textBox6.Location = new System.Drawing.Point(25, 201);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(144, 22);
-            this.textBox6.TabIndex = 13;
+            this.Txtexp.Location = new System.Drawing.Point(25, 201);
+            this.Txtexp.Name = "Txtexp";
+            this.Txtexp.Size = new System.Drawing.Size(144, 22);
+            this.Txtexp.TabIndex = 13;
             // 
-            // textBox4
+            // Txtcond
             // 
-            this.textBox4.Location = new System.Drawing.Point(207, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 22);
-            this.textBox4.TabIndex = 12;
+            this.Txtcond.Location = new System.Drawing.Point(205, 55);
+            this.Txtcond.Name = "Txtcond";
+            this.Txtcond.Size = new System.Drawing.Size(140, 22);
+            this.Txtcond.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 98);
+            this.label6.Location = new System.Drawing.Point(202, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 16);
+            this.label6.Size = new System.Drawing.Size(62, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Dirección";
+            this.label6.Text = "Condena";
             // 
-            // textBox3
+            // Txtape
             // 
-            this.textBox3.Location = new System.Drawing.Point(25, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 22);
-            this.textBox3.TabIndex = 10;
+            this.Txtape.Location = new System.Drawing.Point(25, 128);
+            this.Txtape.Name = "Txtape";
+            this.Txtape.Size = new System.Drawing.Size(144, 22);
+            this.Txtape.TabIndex = 10;
             // 
-            // textBox2
+            // Txtnom
             // 
-            this.textBox2.Location = new System.Drawing.Point(207, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 22);
-            this.textBox2.TabIndex = 7;
+            this.Txtnom.Location = new System.Drawing.Point(25, 61);
+            this.Txtnom.Name = "Txtnom";
+            this.Txtnom.Size = new System.Drawing.Size(144, 22);
+            this.Txtnom.TabIndex = 6;
             // 
-            // textBox1
+            // BtnCancelar
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 22);
-            this.textBox1.TabIndex = 6;
+            this.BtnCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnCancelar.Location = new System.Drawing.Point(196, 242);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 5;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // button2
+            // btnmod
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(196, 242);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(78, 242);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnmod.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnmod.Location = new System.Drawing.Point(78, 242);
+            this.btnmod.Name = "btnmod";
+            this.btnmod.Size = new System.Drawing.Size(75, 23);
+            this.btnmod.TabIndex = 4;
+            this.btnmod.Text = "Modificar";
+            this.btnmod.UseVisualStyleBackColor = false;
+            this.btnmod.Click += new System.EventHandler(this.btnmod_Click);
             // 
             // label5
             // 
@@ -172,15 +163,6 @@
             this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Apellido";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Cedula";
             // 
             // label2
             // 
@@ -213,21 +195,22 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // Btnbusc
             // 
-            this.button3.Location = new System.Drawing.Point(541, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 23);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Buscar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Btnbusc.Location = new System.Drawing.Point(541, 70);
+            this.Btnbusc.Name = "Btnbusc";
+            this.Btnbusc.Size = new System.Drawing.Size(117, 23);
+            this.Btnbusc.TabIndex = 35;
+            this.Btnbusc.Text = "Buscar";
+            this.Btnbusc.UseVisualStyleBackColor = true;
+            this.Btnbusc.Click += new System.EventHandler(this.Btnbusc_Click);
             // 
-            // textBox5
+            // TxtBusc
             // 
-            this.textBox5.Location = new System.Drawing.Point(325, 67);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(184, 22);
-            this.textBox5.TabIndex = 34;
+            this.TxtBusc.Location = new System.Drawing.Point(325, 67);
+            this.TxtBusc.Name = "TxtBusc";
+            this.TxtBusc.Size = new System.Drawing.Size(184, 22);
+            this.TxtBusc.TabIndex = 34;
             // 
             // label8
             // 
@@ -257,8 +240,8 @@
             this.ClientSize = new System.Drawing.Size(800, 393);
             this.ControlBox = false;
             this.Controls.Add(this.LblRegr);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Btnbusc);
+            this.Controls.Add(this.TxtBusc);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -279,22 +262,20 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Txtexp;
+        private System.Windows.Forms.TextBox Txtcond;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Txtape;
+        private System.Windows.Forms.TextBox Txtnom;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button btnmod;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Txtfech;
+        private System.Windows.Forms.Button Btnbusc;
+        private System.Windows.Forms.TextBox TxtBusc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LblRegr;
     }

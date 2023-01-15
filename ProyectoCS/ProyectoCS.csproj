@@ -144,11 +144,11 @@
     <Compile Include="Formularios\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuarios\Eliminar.cs">
+    <Compile Include="Formularios\Usuarios\Consultar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuarios\Eliminar.Designer.cs">
-      <DependentUpon>Eliminar.cs</DependentUpon>
+    <Compile Include="Formularios\Usuarios\Consultar.Designer.cs">
+      <DependentUpon>Consultar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Usuarios\ModRecluso.cs">
       <SubType>Form</SubType>
@@ -179,12 +179,6 @@
     </Compile>
     <Compile Include="Formularios\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Usuarios\VisualizarInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Usuarios\VisualizarInfo.Designer.cs">
-      <DependentUpon>VisualizarInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodos\ConnectBDD.cs" />
     <Compile Include="Metodos\ConnectBDD2.cs" />
@@ -220,8 +214,8 @@
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios\Eliminar.resx">
-      <DependentUpon>Eliminar.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Usuarios\Consultar.resx">
+      <DependentUpon>Consultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\ModRecluso.resx">
       <DependentUpon>ModRecluso.cs</DependentUpon>
@@ -237,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios\VisualizarInfo.resx">
-      <DependentUpon>VisualizarInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
