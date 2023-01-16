@@ -1,4 +1,5 @@
-﻿using ProyectoCS.Metodos;
+﻿using ProyectoCS.Datos;
+using ProyectoCS.Control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ProyectoCS.Formularios.Usuarios
 {
     public partial class RegisRecluso : Form
     {
+        Validaciones val = new Validaciones();
         ConnectBDD Bd = new ConnectBDD();
         public RegisRecluso()
         {
@@ -27,6 +29,8 @@ namespace ProyectoCS.Formularios.Usuarios
             this.Close();
         }
 
+
+        //Guarda la información del formulario
         private void Btnguardar_Click(object sender, EventArgs e)
         {
             string Nombre = Txtnom.Text;
@@ -48,6 +52,7 @@ namespace ProyectoCS.Formularios.Usuarios
             limpiar();
         }
 
+        //Cancela la acción
         private void Btncancelar_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -59,6 +64,16 @@ namespace ProyectoCS.Formularios.Usuarios
             Txtced.Clear();
             Txtcond.Clear();
             Txtexp.Clear();
+        }
+        //Solo acepta numeros
+        private void Txtced_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.soloNumeros(e);
+        }
+        //Solo acepta letras
+        private void Txtnom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.soloTexto(e);
         }
     }
 }

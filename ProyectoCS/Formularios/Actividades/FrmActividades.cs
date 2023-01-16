@@ -44,6 +44,7 @@ namespace ProyectoCS.Formularios.Actividades
             this.Close();
         }
 
+        //Lista las diferentes actividades
         private void LblListActi_Click(object sender, EventArgs e)
         {
             ListActividades Lact = new ListActividades();
@@ -51,6 +52,7 @@ namespace ProyectoCS.Formularios.Actividades
             this.Close();
         }
 
+        //Crea actividades
         private void LblCreActi_Click(object sender, EventArgs e)
         {
             CreacionActividad Cact = new CreacionActividad();
@@ -58,6 +60,7 @@ namespace ProyectoCS.Formularios.Actividades
             this.Close();
         }
 
+        //Modifica actividades
         private void LblModAct_Click(object sender, EventArgs e)
         {
             ModificarActividad Mact = new ModificarActividad();
@@ -65,6 +68,7 @@ namespace ProyectoCS.Formularios.Actividades
             this.Close();
         }
 
+        //Muestras las horas dispuestas a las actividades
         private void LblHorDis_Click(object sender, EventArgs e)
         {
             HorActividades Hact = new HorActividades();

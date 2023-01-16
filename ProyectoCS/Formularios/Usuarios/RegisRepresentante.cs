@@ -1,4 +1,4 @@
-﻿using ProyectoCS.Metodos;
+﻿using ProyectoCS.Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +27,7 @@ namespace ProyectoCS.Formularios.Usuarios
             this.Close();
         }
 
+        //Guarda la información del formulario
         private void Btnguardar_Click(object sender, EventArgs e)
         {
 
@@ -48,6 +49,7 @@ namespace ProyectoCS.Formularios.Usuarios
             limpiar();
         }
 
+        //Cancela la acción
         private void Btncancelar_Click(object sender, EventArgs e)
         {
             limpiar();

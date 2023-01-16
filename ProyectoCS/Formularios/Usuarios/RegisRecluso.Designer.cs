@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Dtpnac = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,20 +45,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LblRegr = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources.Captura_de_pantalla_2022_12_30_210510;
-            this.pictureBox1.Location = new System.Drawing.Point(425, 136);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(341, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -136,6 +127,7 @@
             this.Txtced.Name = "Txtced";
             this.Txtced.Size = new System.Drawing.Size(140, 22);
             this.Txtced.TabIndex = 7;
+            this.Txtced.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtced_KeyPress);
             // 
             // Txtnom
             // 
@@ -143,6 +135,7 @@
             this.Txtnom.Name = "Txtnom";
             this.Txtnom.Size = new System.Drawing.Size(144, 22);
             this.Txtnom.TabIndex = 6;
+            this.Txtnom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnom_KeyPress);
             // 
             // Btncancelar
             // 
@@ -224,6 +217,28 @@
             this.LblRegr.Text = "Regresar";
             this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._1174444;
+            this.pictureBox4.Location = new System.Drawing.Point(664, 20);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 68;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources.Captura_de_pantalla_2022_12_30_210510;
+            this.pictureBox1.Location = new System.Drawing.Point(425, 136);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(341, 144);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // RegisRecluso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,6 +246,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 377);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -238,9 +254,10 @@
             this.Name = "RegisRecluso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Recluso";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +283,6 @@
         private System.Windows.Forms.TextBox Txtcond;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LblRegr;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

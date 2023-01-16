@@ -1,5 +1,5 @@
 ﻿using Google.Protobuf.WellKnownTypes;
-using ProyectoCS.Metodos;
+using ProyectoCS.Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

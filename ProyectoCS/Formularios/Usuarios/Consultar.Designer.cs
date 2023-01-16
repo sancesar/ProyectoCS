@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Cmbusuario = new System.Windows.Forms.ComboBox();
             this.LblRegr = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnBuscar
@@ -145,11 +147,23 @@
             this.LblRegr.Text = "Regresar";
             this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._1174444;
+            this.pictureBox4.Location = new System.Drawing.Point(658, 21);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 67;
+            this.pictureBox4.TabStop = false;
+            // 
             // Consultar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
             this.Controls.Add(this.Cmbusuario);
             this.Controls.Add(this.label3);
@@ -161,6 +175,7 @@
             this.Name = "Consultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +195,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox Cmbusuario;
         private System.Windows.Forms.Label LblRegr;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

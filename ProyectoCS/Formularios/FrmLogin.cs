@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using ProyectoCS.Metodos;
+using ProyectoCS.Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +19,10 @@ namespace ProyectoCS
         {
             InitializeComponent();
         }
-        private void Btnacep_Click(object sender, EventArgs e)
+        //Evento del boton aceptar para ingresar al sistema
+        private void Btnacep_Click(object sender, EventArgs e)  
         {
+            //TryCatch que permite controlar las excepciones al ingresar incorrectamente un usuario/clave
             try
             {
                 string usuario = Txtusu.Text;
@@ -30,8 +32,7 @@ namespace ProyectoCS
                 {
                     MessageBox.Show("Por favor llenar todos los campos....", "Sistema");
 
-                }
-                else
+                }else
                 {
                     //Mandamos a validar el usuario ingresado a ver si consta dentro de la base de datos
                     contrane = Bd.login(usuario, clave);
@@ -49,10 +50,9 @@ namespace ProyectoCS
                 Console.WriteLine(ex.Message);
             }
         }
-
+        //Método que permite terminar la compilacion del programa
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Terminamos la copilacion del programa
             Application.Exit();
         }
     }

@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Validaciones.cs" />
     <Compile Include="Formularios\Actividades\CreacionActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,8 +181,8 @@
     <Compile Include="Formularios\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Metodos\ConnectBDD.cs" />
-    <Compile Include="Metodos\ConnectBDD2.cs" />
+    <Compile Include="Datos\ConnectBDD.cs" />
+    <Compile Include="Datos\ConnectBDD2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Actividades\CreacionActividad.resx">
@@ -258,6 +259,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2022-12-30 210510.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25706.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register_login_signup_icon_219991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_modify_icon-icons.com_72390.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\475990.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\456212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents_files_icon_144654.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01048c13b26dae56c0f27227b1da2f98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1174444.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\93073.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66276.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3534018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\87717.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1295656.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\154346.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
 
-namespace ProyectoCS.Metodos
+namespace ProyectoCS.Datos
 {
     public class ConnectBDD
     {
