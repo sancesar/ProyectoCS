@@ -71,7 +71,6 @@ namespace ProyectoCS.Datos
         {
             try
             {
-                //connectionBD.Close();
                 connectionBD.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Recluso` (`Nombre`, `Apellido`, `Cedula`, `Fecha_Nacimiento` , `Condena`, `N_Expediente`) " +
                     "VALUES ('" + nombre + "','" + apellido + "','" + cedula + "','" + fechaNac + "','" + condena + "','" + expediente + "');", connectionBD);
@@ -92,7 +91,6 @@ namespace ProyectoCS.Datos
 
             try
             {
-                //connectionBD.Close();
                 connectionBD.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Representante` (`Nombre`, `Apellido`, `Cedula`, `Fecha_Nacimiento`, `Especialidad` ) " +
                     "VALUES ('" + nombre + "','" + apellido + "','" + cedula + "','" + fechaNac + "','" + especialidad + "');", connectionBD);
@@ -130,7 +128,7 @@ namespace ProyectoCS.Datos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro lote...");
+                    MessageBox.Show("No se encontro recluso...");
 
                 }
             }
