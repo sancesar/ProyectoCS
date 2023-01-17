@@ -12,6 +12,7 @@ namespace PruebaLogin
     {
         Validaciones val = new Validaciones();
 
+        //CP-001
         [TestMethod]
         public void TestSesion()
         {
@@ -22,7 +23,7 @@ namespace PruebaLogin
             
             //Act
             MySqlConnection connectionBD = new MySqlConnection("server= btxxzyr0ildyylyibkf2-mysql.services.clever-cloud.com; " +
-           "port= 3306; user id=uiw3felwq3nefzn6; password=byRQJsOZPoqRUBP6Gomr; database=btxxzyr0ildyylyibkf2;");
+            "port= 3306; user id=uiw3felwq3nefzn6; password=byRQJsOZPoqRUBP6Gomr; database=btxxzyr0ildyylyibkf2;");
             MySqlDataReader reader = null;
             try { 
             connectionBD.Open();

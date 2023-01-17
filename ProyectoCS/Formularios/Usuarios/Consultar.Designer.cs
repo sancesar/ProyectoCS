@@ -40,23 +40,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Cmbusuario = new System.Windows.Forms.ComboBox();
             this.LblRegr = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(666, 72);
+            this.BtnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnBuscar.Location = new System.Drawing.Point(616, 62);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBuscar.Size = new System.Drawing.Size(117, 36);
             this.BtnBuscar.TabIndex = 36;
             this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // txtced
             // 
-            this.txtced.Location = new System.Drawing.Point(459, 73);
+            this.txtced.Location = new System.Drawing.Point(417, 73);
             this.txtced.Name = "txtced";
             this.txtced.Size = new System.Drawing.Size(177, 22);
             this.txtced.TabIndex = 35;
@@ -64,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(119, 72);
+            this.label2.Location = new System.Drawing.Point(77, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 16);
             this.label2.TabIndex = 34;
@@ -74,7 +77,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 35);
+            this.label1.Location = new System.Drawing.Point(259, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 29);
@@ -119,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(400, 76);
+            this.label3.Location = new System.Drawing.Point(358, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 37;
@@ -131,7 +134,7 @@
             this.Cmbusuario.Items.AddRange(new object[] {
             "Recluso",
             "Representante"});
-            this.Cmbusuario.Location = new System.Drawing.Point(254, 67);
+            this.Cmbusuario.Location = new System.Drawing.Point(212, 67);
             this.Cmbusuario.Name = "Cmbusuario";
             this.Cmbusuario.Size = new System.Drawing.Size(121, 24);
             this.Cmbusuario.TabIndex = 38;
@@ -146,6 +149,17 @@
             this.LblRegr.TabIndex = 39;
             this.LblRegr.Text = "Regresar";
             this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources._107122;
+            this.pictureBox1.Location = new System.Drawing.Point(626, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -163,6 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
             this.Controls.Add(this.Cmbusuario);
@@ -175,6 +190,7 @@
             this.Name = "Consultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,5 +212,6 @@
         private System.Windows.Forms.ComboBox Cmbusuario;
         private System.Windows.Forms.Label LblRegr;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

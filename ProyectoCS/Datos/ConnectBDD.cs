@@ -14,11 +14,12 @@ namespace ProyectoCS.Datos
 {
     public class ConnectBDD
     {
+        //Para la conceccion de la base de datos
         MySqlConnection connectionBD = new MySqlConnection("server= btxxzyr0ildyylyibkf2-mysql.services.clever-cloud.com; " +
            "port= 3306; user id=uiw3felwq3nefzn6; password=byRQJsOZPoqRUBP6Gomr; database=btxxzyr0ildyylyibkf2;");
         MySqlDataReader reader = null;
         
-
+        
         public Boolean login(string usuario, string clave)
         {
 
@@ -31,12 +32,13 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
                 connectionBD.Open();
                 MySqlDataReader reader = null;
+                //Mandamos esta linea a la aplicacion de MySQL para traer los datos que estamos requiriendo 
                 MySqlCommand cmd = new MySqlCommand("SELECT Nombre_de_usu, Clave, Rol FROM btxxzyr0ildyylyibkf2.Usuarios WHERE Nombre_de_usu = @usu AND " +
                     "Clave = @cla", connectionBD);
                 cmd.Parameters.AddWithValue("@usu", usu);
                 cmd.Parameters.AddWithValue("@cla", cla);
                 cmd.ExecuteNonQuery();
-
+                //Verifica si con la coincidencia se encontro 
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -44,6 +46,7 @@ namespace ProyectoCS.Datos
                     if (Convert.ToString(reader["Nombre_de_usu"]) == usu && Convert.ToString(reader["Clave"]) == cla)
                     {
                         MessageBox.Show("Inicio de sesión excitosa...", "Conectado");
+                        //Se abre el formulario 
                         frmAct.Show();
                         return true;
                     }
@@ -56,6 +59,7 @@ namespace ProyectoCS.Datos
             }
             return false;
         }
+        //llena el combo de representantes en actividades
         public void llenarCombo(ComboBox combo1)
         {
             MySqlCommand cm = new MySqlCommand("REPRESEN", connectionBD);
@@ -67,11 +71,13 @@ namespace ProyectoCS.Datos
             combo1.DataSource = dt;
         }
 
+        //agregar nuevo recluso
         internal void DatosRecluso(string nombre, string apellido, string cedula, string fechaNac, string condena, string expediente)
         {
             try
             {
                 connectionBD.Open();
+                //Se manda los datos del recluso que fueron ingresados a la base de datos para que puedan ser guardados
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Recluso` (`Nombre`, `Apellido`, `Cedula`, `Fecha_Nacimiento` , `Condena`, `N_Expediente`) " +
                     "VALUES ('" + nombre + "','" + apellido + "','" + cedula + "','" + fechaNac + "','" + condena + "','" + expediente + "');", connectionBD);
                 cmd.ExecuteNonQuery();
@@ -85,13 +91,14 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
             }
 }
-
+        //Agregar representante
         internal void DatosRepresentante(string nombre, string apellido, string cedula, string fechaNac, string especialidad)
         {
 
             try
             {
                 connectionBD.Open();
+                //Se manda los datos del representante que fueron ingresados a la base de datos para que puedan ser guardados
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Representante` (`Nombre`, `Apellido`, `Cedula`, `Fecha_Nacimiento`, `Especialidad` ) " +
                     "VALUES ('" + nombre + "','" + apellido + "','" + cedula + "','" + fechaNac + "','" + especialidad + "');", connectionBD);
                 cmd.ExecuteNonQuery();
@@ -105,13 +112,14 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
             }
 }
-
+        //buscar recluso
         internal void BuscarEdiRecl(TextBox txtBusc,TextBox txtnom, TextBox txtape, TextBox txtfech, TextBox txtcond, TextBox txtexp)
         {
             try
             {
                 connectionBD.Open();
                 string busc = txtBusc.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
                 MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Fecha_Nacimiento, Condena, N_Expediente FROM btxxzyr0ildyylyibkf2.Recluso WHERE Cedula = @busc ;", connectionBD);
                 cmd.Parameters.AddWithValue("@busc", busc);
                 reader = cmd.ExecuteReader();
@@ -119,6 +127,7 @@ namespace ProyectoCS.Datos
                 {
                     while (reader.Read())
                     {
+                        //Se llenan los Txt para poder modificarlos
                         txtnom.Text = reader.GetString(0);
                         txtape.Text = reader.GetString(1);
                         txtfech.Text = reader.GetString(2);
@@ -142,7 +151,7 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
             }
         }
-
+        //Permite actualizar/modificar los datos del recluso en la base de datos en la nube
         internal void ActulizarRecl(TextBox txtbusc, TextBox txtnom, TextBox txtape, TextBox txtfech, TextBox txtcond, TextBox txtexp)
         {
             string busc = txtbusc.Text;
@@ -154,7 +163,7 @@ namespace ProyectoCS.Datos
 
             try
             {
-
+                //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
                 MySqlCommand cmd = new MySqlCommand("UPDATE `btxxzyr0ildyylyibkf2`.`Recluso` SET `Nombre` = '" + nom + "', " +
                     "`Apellido` = '" + ape + "', `Fecha_Nacimiento` = '" + fech + "', `Condena` = '" + cond + "', `N_Expediente` = '" + exp +
                     "' WHERE `Cedula` = '" + busc+ "';", connectionBD);
@@ -174,9 +183,10 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
             }
         }
-
+        //Permite buscar a un usuario en la base de datos por medio del parametro cedula
         internal void BuscarUsuario(string usuario, string cedula, ListView listper)
         {
+            //Buscamos la coincidencia que el usuario sea Recluso
             if (usuario == "Recluso")
             {
                 if (cedula == "")
@@ -211,7 +221,8 @@ namespace ProyectoCS.Datos
                     }
                 }
             }
-            else if(usuario == "Representante")
+            //Buscamos la coincidencia que el usuario sea representante
+            else if (usuario == "Representante")
             {
                 if (cedula == "")
                 {
@@ -229,7 +240,7 @@ namespace ProyectoCS.Datos
                     }
                 }
                 else
-                {
+                {                   
                     MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Cedula, Fecha_Nacimiento FROM btxxzyr0ildyylyibkf2.Representante WHERE Cedula= @ced;", connectionBD);
                     cmd.Parameters.AddWithValue("@ced", cedula);
                     MySqlDataAdapter adap = new MySqlDataAdapter();
@@ -246,6 +257,7 @@ namespace ProyectoCS.Datos
                 }
             }
         }
+        //Metodo que permite llenar las listas con lo que se requiera
         private void llenarlist(int i, DataTable tabla, ListView listper)
         {
             DataRow filas = tabla.Rows[i];
