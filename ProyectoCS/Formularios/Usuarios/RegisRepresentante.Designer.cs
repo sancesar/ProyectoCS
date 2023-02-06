@@ -44,12 +44,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LblRegr = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.Dtpnac);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.Txtesp);
@@ -125,9 +133,9 @@
             // Btncancelar
             // 
             this.Btncancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Btncancelar.Location = new System.Drawing.Point(196, 242);
+            this.Btncancelar.Location = new System.Drawing.Point(196, 236);
             this.Btncancelar.Name = "Btncancelar";
-            this.Btncancelar.Size = new System.Drawing.Size(75, 23);
+            this.Btncancelar.Size = new System.Drawing.Size(124, 29);
             this.Btncancelar.TabIndex = 5;
             this.Btncancelar.Text = "Cancelar";
             this.Btncancelar.UseVisualStyleBackColor = false;
@@ -136,9 +144,9 @@
             // Btnguardar
             // 
             this.Btnguardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Btnguardar.Location = new System.Drawing.Point(78, 242);
+            this.Btnguardar.Location = new System.Drawing.Point(37, 236);
             this.Btnguardar.Name = "Btnguardar";
-            this.Btnguardar.Size = new System.Drawing.Size(75, 23);
+            this.Btnguardar.Size = new System.Drawing.Size(116, 29);
             this.Btnguardar.TabIndex = 4;
             this.Btnguardar.Text = "Guardar";
             this.Btnguardar.UseVisualStyleBackColor = false;
@@ -204,6 +212,39 @@
             this.LblRegr.Text = "Regresar";
             this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox3.Image = global::ProyectoCS.Properties.Resources._101754;
+            this.pictureBox3.Location = new System.Drawing.Point(204, 242);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 17);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 71;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox2.Image = global::ProyectoCS.Properties.Resources._69539;
+            this.pictureBox2.Location = new System.Drawing.Point(45, 242);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 17);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 72;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._1174444;
+            this.pictureBox4.Location = new System.Drawing.Point(677, 20);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 73;
+            this.pictureBox4.TabStop = false;
+            // 
             // RegisRepresentante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,6 +252,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 389);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -221,6 +263,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +289,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblRegr;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

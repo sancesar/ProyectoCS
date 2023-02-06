@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoCS.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace ProyectoCS.Formularios.Actividades
 {
     public partial class HorActividades : Form
     {
+        ConnectBDD Bd = new ConnectBDD();
         public HorActividades()
         {
             InitializeComponent();
+            Bd.Llenar_horario(LstvHorario);
         }
         //Regresamos al formulatio anterior
         private void LblRegr_Click(object sender, EventArgs e)

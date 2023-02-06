@@ -44,9 +44,9 @@ namespace ProyectoCS.Formularios.Usuarios
             else
             {
                 Bd.DatosRepresentante(Nombre, Apellido, Cedula, FechaNac, Especialidad);
-
+                limpiar();
             }
-            limpiar();
+            
         }
 
         //Cancela la acción

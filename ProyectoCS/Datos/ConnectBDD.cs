@@ -18,6 +18,8 @@ namespace ProyectoCS.Datos
         //Para la conceccion de la base de datos
         MySqlConnection connectionBD = new MySqlConnection("server= btxxzyr0ildyylyibkf2-mysql.services.clever-cloud.com; " +
            "port= 3306; user id=uiw3felwq3nefzn6; password=byRQJsOZPoqRUBP6Gomr; database=btxxzyr0ildyylyibkf2;");
+        protected MySqlCommand Command = new MySqlCommand();
+        protected MySqlDataReader Reader;
         MySqlDataReader reader = null;
         
         
@@ -61,18 +63,49 @@ namespace ProyectoCS.Datos
             return false;
         }
         //llena el combo de representantes en actividades
-        public void llenarCombo(ComboBox combo1)
+        public void llenarCombo(ComboBox mycombo)
         {
-            MySqlCommand cm = new MySqlCommand("REPRESEN", connectionBD);
-            cm.CommandType = CommandType.StoredProcedure;
-            MySqlDataAdapter da = new MySqlDataAdapter(cm);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            combo1.DisplayMember = "Especialidad";
-            combo1.DataSource = dt;
+            try
+            {
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                DataSet clientds = new DataSet();
+                DataTable clientsTable = new DataTable();
+
+                Command.Connection = connectionBD;
+                Command.CommandText = "REPRESEN";
+                Command.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(clientds);
+                connectionBD.Open();
+                Reader = Command.ExecuteReader();
+                clientsTable = clientds.Tables[0];
+
+                try
+                {
+
+                    for (int i = 0; i < clientsTable.Rows.Count; i++)
+                    {
+                        DataRow rowClient = clientsTable.Rows[i];
+                        mycombo.Items.Add(rowClient["Representante"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
+
+                Command.Parameters.Clear();
+                Reader.Close();
+                connectionBD.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(" " + ex);
+            }
         }
 
-        //agregar nuevo recluso
+
+            //agregar nuevo recluso
         internal void DatosRecluso(string nombre, string apellido, string cedula, string fechaNac, string condena, string expediente)
         {
             try
@@ -335,6 +368,174 @@ namespace ProyectoCS.Datos
             finally
             {
                 connectionBD.Close();
+            }
+        }
+
+        internal void Creacion_Actividad(string id, string nombre, string valor, string tipo, string dias, string representante, string hora, string cupos)
+        {
+            try
+            {
+                connectionBD.Open();
+                //Se manda los datos del recluso que fueron ingresados a la base de datos para que puedan ser guardados
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Actividad` (`Id_Actividad`, `Nombre`, `Valor`, `Tipo` , `Representante`, `Dia`, `Hora`, `Cupo`) " +
+                    "VALUES ('" + id + "','" + nombre + "','" + valor + "','" + tipo + "','" + representante + "','" + dias + "','" + hora + "','" + cupos + "');", connectionBD);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                connectionBD.Close();
+            }
+        }
+        //Buscamos la actividad
+        internal void Buscar_Actividad(TextBox txtbusc, TextBox txtnomact, TextBox txtval, ComboBox cmbtip, TextBox txtdias, ComboBox cmbRepr, TextBox txthora, TextBox txtcup)
+        {
+            try
+            {
+                connectionBD.Open();
+                string busc = txtbusc.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM btxxzyr0ildyylyibkf2.Actividad WHERE Id_Actividad = @busc ;", connectionBD);
+                cmd.Parameters.AddWithValue("@busc", busc);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //Se llenan los Txt para poder modificarlos
+                        txtnomact.Text = reader.GetString(1);
+                        txtval.Text = reader.GetString(2);
+                        cmbtip.Text = reader.GetString(3);
+                        cmbRepr.Text = reader.GetString(4);
+                        txtdias.Text = reader.GetString(5);
+                        txthora.Text = reader.GetString(6);
+                        txtcup.Text = reader.GetString(7);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro Actividad ...");
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                connectionBD.Close();
+            }
+        }
+
+        internal void Modificar_Actividad(TextBox txtbusc, TextBox txtnomact, TextBox txtval, ComboBox cmbtip, TextBox txtdias, ComboBox cmbRepr, TextBox txthora, TextBox txtcup)
+        {
+            string busc = txtbusc.Text;
+            string nom = txtnomact.Text;
+            string val = txtval.Text;
+            string tip = cmbtip.Text;
+            string dias = txtdias.Text;
+            string repre = cmbRepr.Text;
+            string hora = txthora.Text;
+            string cup = txtcup.Text;
+
+            try
+            {
+
+                //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
+                MySqlCommand cmd = new MySqlCommand("UPDATE `btxxzyr0ildyylyibkf2`.`Actividad` SET `Nombre` = '" + nom + "', `Valor` = '" + val +
+                   "', `Tipo` = '" + tip + "', `Representante` = '" + repre + "', `Dia` = '" + dias + "'" +
+                   ", `Hora` = '" + hora + "', `Cupo` = '" + cup + "' WHERE `Id_Actividad` = '" + busc + "';", connectionBD);
+                connectionBD.Open();
+                cmd.ExecuteNonQuery();
+
+
+                MessageBox.Show("Actividad Actualizada...");
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                connectionBD.Close();
+            }
+        }
+
+        internal void Llenar_horario(ListView lstvHorario)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Dia, Cupo, Hora FROM btxxzyr0ildyylyibkf2.Actividad;", connectionBD);
+            MySqlDataAdapter adap = new MySqlDataAdapter();
+            adap.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            DataTable tabla = new DataTable();
+            adap.Fill(ds);
+            tabla = ds.Tables[0];
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                DataRow filas = tabla.Rows[i];
+                ListViewItem elementos = new ListViewItem(filas["Nombre"].ToString());
+                elementos.SubItems.Add(filas["Dia"].ToString());
+                elementos.SubItems.Add(filas["Cupo"].ToString());
+                elementos.SubItems.Add(filas["Hora"].ToString());
+                lstvHorario.Items.Add(elementos);
+            }
+        }
+
+        internal void Buscar_Actividades(string id, ListView lstvActividades)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                llenarlist2_1(lstvActividades);
+            }
+            else { 
+                MySqlCommand cmd = new MySqlCommand("SELECT Id_Actividad, Nombre, Valor, Tipo, Representante  FROM btxxzyr0ildyylyibkf2.Actividad WHERE Id_Actividad= @id;", connectionBD);
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataAdapter adap = new MySqlDataAdapter();
+                adap.SelectCommand = cmd;
+                DataSet ds = new DataSet();
+                DataTable tabla = new DataTable();
+                adap.Fill(ds);
+                lstvActividades.Items.Clear();
+                tabla = ds.Tables[0];
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    llenarlist2(i, tabla, lstvActividades);
+                }
+            }
+        }
+
+        private void llenarlist2(int i, DataTable tabla, ListView lstvActividades)
+        {
+            
+            DataRow filas = tabla.Rows[i];
+            ListViewItem elementos = new ListViewItem(filas["Id_Actividad"].ToString());
+            elementos.SubItems.Add(filas["Nombre"].ToString());
+            elementos.SubItems.Add(filas["Valor"].ToString());
+            elementos.SubItems.Add(filas["Tipo"].ToString());
+            elementos.SubItems.Add(filas["Representante"].ToString());
+            lstvActividades.Items.Add(elementos);
+        }
+
+        internal void llenarlist2_1(ListView lstvActividades)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT Id_Actividad, Nombre, Valor, Tipo, Representante  FROM btxxzyr0ildyylyibkf2.Actividad", connectionBD);
+            MySqlDataAdapter adap = new MySqlDataAdapter();
+            adap.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            DataTable tabla = new DataTable();
+            adap.Fill(ds);
+            lstvActividades.Items.Clear();
+            tabla = ds.Tables[0];
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                llenarlist2(i, tabla, lstvActividades);
             }
         }
     }

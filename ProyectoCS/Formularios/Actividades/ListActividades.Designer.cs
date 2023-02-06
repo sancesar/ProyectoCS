@@ -28,32 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.LstvActividades = new System.Windows.Forms.ListView();
             this.NomAct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ValAct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TipAct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RepresAct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Txtid = new System.Windows.Forms.TextBox();
             this.LblRegr = new System.Windows.Forms.Label();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // LstvActividades
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LstvActividades.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
             this.NomAct,
             this.ValAct,
             this.TipAct,
             this.RepresAct});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(55, 108);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(705, 301);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.LstvActividades.HideSelection = false;
+            this.LstvActividades.Location = new System.Drawing.Point(55, 108);
+            this.LstvActividades.Name = "LstvActividades";
+            this.LstvActividades.Size = new System.Drawing.Size(705, 301);
+            this.LstvActividades.TabIndex = 0;
+            this.LstvActividades.UseCompatibleStateImageBehavior = false;
+            this.LstvActividades.View = System.Windows.Forms.View.Details;
             // 
             // NomAct
             // 
@@ -68,7 +74,7 @@
             // TipAct
             // 
             this.TipAct.Text = "Tipo";
-            this.TipAct.Width = 200;
+            this.TipAct.Width = 100;
             // 
             // RepresAct
             // 
@@ -89,27 +95,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 71);
+            this.label2.Location = new System.Drawing.Point(97, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 16);
+            this.label2.Size = new System.Drawing.Size(158, 16);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Buscar Actividad:";
+            this.label2.Text = "Buscar Id de la Actividad:";
             // 
-            // textBox1
+            // Txtid
             // 
-            this.textBox1.Location = new System.Drawing.Point(261, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 30;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(504, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Txtid.Location = new System.Drawing.Point(261, 65);
+            this.Txtid.Name = "Txtid";
+            this.Txtid.Size = new System.Drawing.Size(177, 22);
+            this.Txtid.TabIndex = 30;
             // 
             // LblRegr
             // 
@@ -122,20 +119,62 @@
             this.LblRegr.Text = "Regresar";
             this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
             // 
+            // Id
+            // 
+            this.Id.Text = "Id Actividad";
+            this.Id.Width = 100;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._1174444;
+            this.pictureBox4.Location = new System.Drawing.Point(647, 25);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 74;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources._107122;
+            this.pictureBox1.Location = new System.Drawing.Point(525, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnBuscar.Location = new System.Drawing.Point(515, 61);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(117, 36);
+            this.BtnBuscar.TabIndex = 75;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
             // ListActividades
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txtid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.LstvActividades);
             this.Name = "ListActividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Actividades";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,15 +182,18 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView LstvActividades;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader NomAct;
         private System.Windows.Forms.ColumnHeader ValAct;
         private System.Windows.Forms.ColumnHeader TipAct;
         private System.Windows.Forms.ColumnHeader RepresAct;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Txtid;
         private System.Windows.Forms.Label LblRegr;
+        private System.Windows.Forms.ColumnHeader Id;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnBuscar;
     }
 }
