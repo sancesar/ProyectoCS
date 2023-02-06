@@ -9,6 +9,7 @@ using ProyectoCS.Formularios.Actividades;
 using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
+using System.Xml.Linq;
 
 namespace ProyectoCS.Datos
 {
@@ -266,6 +267,75 @@ namespace ProyectoCS.Datos
             elementos.SubItems.Add(filas["Cedula"].ToString());
             elementos.SubItems.Add(filas["Fecha_Nacimiento"].ToString());
             listper.Items.Add(elementos);
+        }
+
+        internal void BuscarEdiRepr(TextBox txtBusc, TextBox txtnom, TextBox txtape, TextBox txtfech, TextBox txtesp)
+        {
+            try
+            {
+                connectionBD.Open();
+                string busc = txtBusc.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM btxxzyr0ildyylyibkf2.Representante WHERE Cedula = @busc ;", connectionBD);
+                cmd.Parameters.AddWithValue("@busc", busc);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //Se llenan los Txt para poder modificarlos
+                        txtnom.Text = reader.GetString(0);
+                        txtape.Text = reader.GetString(1);
+                        txtfech.Text = reader.GetString(3);
+                        txtesp.Text = reader.GetString(4);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro representante ...");
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                connectionBD.Close();
+            }
+        }
+
+        internal void ActulizarRepr(TextBox txtBusc, TextBox txtnom, TextBox txtape, TextBox txtfech, TextBox txtesp)
+        {
+            string busc = txtBusc.Text;
+            string nom = txtnom.Text;
+            string ape = txtape.Text;
+            string fech = txtfech.Text;
+            string esp = txtesp.Text;
+
+            try
+            {
+
+                //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
+                MySqlCommand cmd = new MySqlCommand("UPDATE `btxxzyr0ildyylyibkf2`.`Representante` SET `Nombre` = '" + nom + "', `Apellido` = '" + ape +
+                   "', `Fecha_Nacimiento` = '" + fech + "', `Especialidad` = '" + esp + "' WHERE `Cedula` = '" + busc + "';", connectionBD);
+                connectionBD.Open();
+                cmd.ExecuteNonQuery();
+
+
+                MessageBox.Show("Representante Actualizado...");
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                connectionBD.Close();
+            }
         }
     }
 }
