@@ -36,9 +36,11 @@
             this.LblRegr = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.ReportRepres = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.representantesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // representantesBindingSource
@@ -90,17 +92,29 @@
             reportDataSource1.Value = this.representantesBindingSource;
             this.ReportRepres.LocalReport.DataSources.Add(reportDataSource1);
             this.ReportRepres.LocalReport.ReportEmbeddedResource = "ProyectoCS.Reportes.Representante.rdlc";
-            this.ReportRepres.Location = new System.Drawing.Point(87, 107);
+            this.ReportRepres.Location = new System.Drawing.Point(12, 73);
             this.ReportRepres.Name = "ReportRepres";
             this.ReportRepres.ServerReport.BearerToken = null;
-            this.ReportRepres.Size = new System.Drawing.Size(637, 314);
+            this.ReportRepres.Size = new System.Drawing.Size(738, 335);
             this.ReportRepres.TabIndex = 76;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox5.Image = global::ProyectoCS.Properties.Resources._93073;
+            this.pictureBox5.Location = new System.Drawing.Point(74, 24);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 29);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 77;
+            this.pictureBox5.TabStop = false;
             // 
             // InfRespActi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(777, 446);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.ReportRepres);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
@@ -112,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.representantesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +140,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer ReportRepres;
         private System.Windows.Forms.BindingSource representantesBindingSource;
         private Tablas tablas;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
