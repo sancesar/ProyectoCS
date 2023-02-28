@@ -28,60 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.representantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tablas = new ProyectoCS.Tablas();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Ape = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Ced = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Act = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LblRegr = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.ReportRepres = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.representantesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
+            // 
+            // representantesBindingSource
+            // 
+            this.representantesBindingSource.DataMember = "Representantes";
+            this.representantesBindingSource.DataSource = this.tablas;
+            // 
+            // tablas
+            // 
+            this.tablas.DataSetName = "Tablas";
+            this.tablas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(176, 30);
+            this.label1.Location = new System.Drawing.Point(116, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(479, 29);
             this.label1.TabIndex = 37;
             this.label1.Text = "Informe de responsables de actividades";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Nom,
-            this.Ape,
-            this.Ced,
-            this.Act});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(49, 87);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(701, 301);
-            this.listView1.TabIndex = 36;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // Nom
-            // 
-            this.Nom.Text = "Nombre";
-            this.Nom.Width = 200;
-            // 
-            // Ape
-            // 
-            this.Ape.Text = "Apellido";
-            this.Ape.Width = 200;
-            // 
-            // Ced
-            // 
-            this.Ced.Text = "Cedula";
-            this.Ced.Width = 100;
-            // 
-            // Act
-            // 
-            this.Act.Text = "Actividad";
-            this.Act.Width = 150;
             // 
             // LblRegr
             // 
@@ -94,17 +73,45 @@
             this.LblRegr.Text = "Regresar";
             this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._1174444;
+            this.pictureBox4.Location = new System.Drawing.Point(637, 9);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 75;
+            this.pictureBox4.TabStop = false;
+            // 
+            // ReportRepres
+            // 
+            reportDataSource1.Name = "Representante";
+            reportDataSource1.Value = this.representantesBindingSource;
+            this.ReportRepres.LocalReport.DataSources.Add(reportDataSource1);
+            this.ReportRepres.LocalReport.ReportEmbeddedResource = "ProyectoCS.Reportes.Representante.rdlc";
+            this.ReportRepres.Location = new System.Drawing.Point(87, 107);
+            this.ReportRepres.Name = "ReportRepres";
+            this.ReportRepres.ServerReport.BearerToken = null;
+            this.ReportRepres.Size = new System.Drawing.Size(637, 314);
+            this.ReportRepres.TabIndex = 76;
+            // 
             // InfRespActi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(777, 424);
+            this.ClientSize = new System.Drawing.Size(777, 446);
             this.ControlBox = false;
+            this.Controls.Add(this.ReportRepres);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.LblRegr);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
             this.Name = "InfRespActi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfRespActi";
+            this.Load += new System.EventHandler(this.InfRespActi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.representantesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,11 +120,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Nom;
-        private System.Windows.Forms.ColumnHeader Ape;
-        private System.Windows.Forms.ColumnHeader Ced;
-        private System.Windows.Forms.ColumnHeader Act;
         private System.Windows.Forms.Label LblRegr;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private Microsoft.Reporting.WinForms.ReportViewer ReportRepres;
+        private System.Windows.Forms.BindingSource representantesBindingSource;
+        private Tablas tablas;
     }
 }

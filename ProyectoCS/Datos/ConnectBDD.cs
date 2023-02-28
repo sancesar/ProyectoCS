@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
 using System.Xml.Linq;
+using Microsoft.Reporting.WinForms;
+using Microsoft.ReportingServices.Interfaces;
 
 namespace ProyectoCS.Datos
 {
@@ -538,5 +540,24 @@ namespace ProyectoCS.Datos
                 llenarlist2(i, tabla, lstvActividades);
             }
         }
+
+        internal void ReportRepresentante(ReportViewer reportRepres)
+        {
+            string Reportes = "Representante";
+            DataTable tabla = new DataTable();
+            MySqlDataAdapter cmd = new MySqlDataAdapter("SELECT * FROM btxxzyr0ildyylyibkf2.Representante", connectionBD);
+            cmd.Fill(tabla);
+            Reporte(tabla, reportRepres, Reportes);
+        }
+
+        private void Reporte(DataTable tabla, ReportViewer reporte, string datos)
+        {
+            reporte.LocalReport.DataSources.Clear();
+            ReportDataSource report = new ReportDataSource(datos, tabla);
+            reporte.LocalReport.DataSources.Add(report);
+            reporte.RefreshReport();
+        }
+
+
     }
 }

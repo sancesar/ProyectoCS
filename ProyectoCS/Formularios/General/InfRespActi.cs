@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using Microsoft.ReportingServices.Interfaces;
+using MySql.Data.MySqlClient;
+using ProyectoCS.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +16,13 @@ namespace ProyectoCS.Formularios.General
 {
     public partial class InfRespActi : Form
     {
+        ConnectBDD Bd = new ConnectBDD();
         public InfRespActi()
         {
             InitializeComponent();
+            Bd.ReportRepresentante(ReportRepres);
         }
+
         //Regresamos al formulatio anterior
         private void LblRegr_Click(object sender, EventArgs e)
         {
@@ -23,5 +30,12 @@ namespace ProyectoCS.Formularios.General
             FrmGene.Show();
             this.Close();
         }
+
+        private void InfRespActi_Load(object sender, EventArgs e)
+        {
+
+            this.ReportRepres.RefreshReport();
+        }
+
     }
 }
