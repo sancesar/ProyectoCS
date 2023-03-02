@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Xml.Linq;
 using Microsoft.Reporting.WinForms;
 using Microsoft.ReportingServices.Interfaces;
+using Google.Protobuf.WellKnownTypes;
 
 namespace ProyectoCS.Datos
 {
@@ -37,14 +38,15 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
                 connectionBD.Open();
                 MySqlDataReader reader = null;
+                Command.Connection = connectionBD;
+                Command.CommandText = "INICIAR";
+                Command.CommandType = CommandType.StoredProcedure;
                 //Mandamos esta linea a la aplicacion de MySQL para traer los datos que estamos requiriendo 
-                MySqlCommand cmd = new MySqlCommand("SELECT Nombre_de_usu, Clave, Rol FROM btxxzyr0ildyylyibkf2.Usuarios WHERE Nombre_de_usu = @usu AND " +
-                    "Clave = @cla", connectionBD);
-                cmd.Parameters.AddWithValue("@usu", usu);
-                cmd.Parameters.AddWithValue("@cla", cla);
-                cmd.ExecuteNonQuery();
+                Command.Parameters.AddWithValue("@usu", usu);
+                Command.Parameters.AddWithValue("@cla", cla);
+                Command.ExecuteNonQuery();
                 //Verifica si con la coincidencia se encontro 
-                reader = cmd.ExecuteReader();
+                reader = Command.ExecuteReader();
                 while (reader.Read())
                 {
 
@@ -114,9 +116,17 @@ namespace ProyectoCS.Datos
             {
                 connectionBD.Open();
                 //Se manda los datos del recluso que fueron ingresados a la base de datos para que puedan ser guardados
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Recluso` (`Nombre`, `Apellido`, `Cedula`, `Fecha_Nacimiento` , `Condena`, `N_Expediente`) " +
-                    "VALUES ('" + nombre + "','" + apellido + "','" + cedula + "','" + fechaNac + "','" + condena + "','" + expediente + "');", connectionBD);
-                cmd.ExecuteNonQuery();
+                Command.Connection = connectionBD;
+                Command.CommandText = "DRECLUSO";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@nom", nombre);
+                Command.Parameters.AddWithValue("@ape", apellido);
+                Command.Parameters.AddWithValue("@ced", cedula);
+                Command.Parameters.AddWithValue("@fec", fechaNac);
+                Command.Parameters.AddWithValue("@con", condena);
+                Command.Parameters.AddWithValue("@exp", expediente);
+                Command.ExecuteNonQuery();
+                MessageBox.Show("Recluso Registrado...");
 
             }
             catch (MySqlException ex)
@@ -124,6 +134,7 @@ namespace ProyectoCS.Datos
                 MessageBox.Show("" + ex.ToString());
             }finally
             {
+                Command.Parameters.Clear();
                 connectionBD.Close();
             }
 }
@@ -135,9 +146,16 @@ namespace ProyectoCS.Datos
             {
                 connectionBD.Open();
                 //Se manda los datos del representante que fueron ingresados a la base de datos para que puedan ser guardados
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Representante` (`Nombre`, `Apellido`, `Cedula`, `Fecha_Nacimiento`, `Especialidad` ) " +
-                    "VALUES ('" + nombre + "','" + apellido + "','" + cedula + "','" + fechaNac + "','" + especialidad + "');", connectionBD);
-                cmd.ExecuteNonQuery();
+                Command.Connection = connectionBD;
+                Command.CommandText = "DREPRESENTANTE";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@nom", nombre);
+                Command.Parameters.AddWithValue("@ape", apellido);
+                Command.Parameters.AddWithValue("@ced", cedula);
+                Command.Parameters.AddWithValue("@fec", fechaNac);
+                Command.Parameters.AddWithValue("@esp", especialidad);
+                Command.ExecuteNonQuery();
+                MessageBox.Show("Representante Registrado...");
 
             }
             catch (MySqlException ex)
@@ -145,6 +163,7 @@ namespace ProyectoCS.Datos
                 MessageBox.Show("" + ex.ToString());
             }finally
             {
+                Command.Parameters.Clear();
                 connectionBD.Close();
             }
 }
@@ -156,9 +175,11 @@ namespace ProyectoCS.Datos
                 connectionBD.Open();
                 string busc = txtBusc.Text;
                 //Buscamos los datos del recluso con la condicion de la cedula
-                MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Fecha_Nacimiento, Condena, N_Expediente FROM btxxzyr0ildyylyibkf2.Recluso WHERE Cedula = @busc ;", connectionBD);
-                cmd.Parameters.AddWithValue("@busc", busc);
-                reader = cmd.ExecuteReader();
+                Command.Connection = connectionBD;
+                Command.CommandText = "BUSCRECLUSO";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@busc", busc);
+                reader = Command.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -184,27 +205,35 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
+                reader.Close();
                 connectionBD.Close();
             }
         }
         //Permite actualizar/modificar los datos del recluso en la base de datos en la nube
         internal void ActulizarRecl(TextBox txtbusc, TextBox txtnom, TextBox txtape, TextBox txtfech, TextBox txtcond, TextBox txtexp)
         {
-            string busc = txtbusc.Text;
+            string bus = txtbusc.Text;
             string nom = txtnom.Text;
             string ape = txtape.Text;
-            string fech = txtfech.Text;
-            string cond = txtcond.Text;
+            string fec = txtfech.Text;
+            string con = txtcond.Text;
             string exp = txtexp.Text;
 
             try
             {
                 //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
-                MySqlCommand cmd = new MySqlCommand("UPDATE `btxxzyr0ildyylyibkf2`.`Recluso` SET `Nombre` = '" + nom + "', " +
-                    "`Apellido` = '" + ape + "', `Fecha_Nacimiento` = '" + fech + "', `Condena` = '" + cond + "', `N_Expediente` = '" + exp +
-                    "' WHERE `Cedula` = '" + busc+ "';", connectionBD);
+                Command.Connection = connectionBD;
+                Command.CommandText = "ACTURECLUSO";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", bus);
+                Command.Parameters.AddWithValue("@nom", nom);
+                Command.Parameters.AddWithValue("@ape", ape);
+                Command.Parameters.AddWithValue("@fec", fec);
+                Command.Parameters.AddWithValue("@con", con);
+                Command.Parameters.AddWithValue("@exp", exp);
                 connectionBD.Open();
-                cmd.ExecuteNonQuery();
+                Command.ExecuteNonQuery();
 
 
                 MessageBox.Show("Recluso Actualizado...");
@@ -216,6 +245,7 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
                 connectionBD.Close();
             }
         }
@@ -227,34 +257,49 @@ namespace ProyectoCS.Datos
             {
                 if (cedula == "")
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Cedula, Fecha_Nacimiento FROM btxxzyr0ildyylyibkf2.Recluso;", connectionBD);
+                    Command.Connection = connectionBD;
+                    Command.CommandText = "USURECLUSO";
+                    Command.CommandType = CommandType.StoredProcedure;
                     MySqlDataAdapter adap = new MySqlDataAdapter();
-                    adap.SelectCommand = cmd;
+                    adap.SelectCommand = Command;
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
                     adap.Fill(ds);
+                    connectionBD.Open();
+                    Reader = Command.ExecuteReader();
                     tabla = ds.Tables[0];
                     listper.Items.Clear();
                     for (int i = 0; i < tabla.Rows.Count; i++)
                     {
                         llenarlist(i, tabla, listper);
                     }
+                    Command.Parameters.Clear();
+                    Reader.Close();
+                    connectionBD.Close();
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Cedula, Fecha_Nacimiento FROM btxxzyr0ildyylyibkf2.Recluso WHERE Cedula= @ced;", connectionBD);
-                    cmd.Parameters.AddWithValue("@ced", cedula);
+
+                    Command.Connection = connectionBD;
+                    Command.CommandText = "USUCEDRECLUSO";
+                    Command.CommandType = CommandType.StoredProcedure;
+                    Command.Parameters.AddWithValue("@ced", cedula);
                     MySqlDataAdapter adap = new MySqlDataAdapter();
-                    adap.SelectCommand = cmd;
+                    adap.SelectCommand = Command;
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
                     adap.Fill(ds);
+                    connectionBD.Open();
+                    Reader = Command.ExecuteReader();
                     tabla = ds.Tables[0];
                     listper.Items.Clear();
                     for (int i = 0; i < tabla.Rows.Count; i++)
                     {
                         llenarlist(i, tabla, listper);
                     }
+                    Command.Parameters.Clear();
+                    Reader.Close();
+                    connectionBD.Close();
                 }
             }
             //Buscamos la coincidencia que el usuario sea representante
@@ -262,34 +307,49 @@ namespace ProyectoCS.Datos
             {
                 if (cedula == "")
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Cedula, Fecha_Nacimiento FROM btxxzyr0ildyylyibkf2.Representante;", connectionBD);
+
+                    Command.Connection = connectionBD;
+                    Command.CommandText = "USUREPRESENTANTE";
+                    Command.CommandType = CommandType.StoredProcedure;
                     MySqlDataAdapter adap = new MySqlDataAdapter();
-                    adap.SelectCommand = cmd;
+                    adap.SelectCommand = Command;
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
                     adap.Fill(ds);
+                    connectionBD.Open();
+                    Reader = Command.ExecuteReader();
                     tabla = ds.Tables[0];
                     listper.Items.Clear();
                     for (int i = 0; i < tabla.Rows.Count; i++)
                     {
                         llenarlist(i, tabla, listper);
                     }
+                    Command.Parameters.Clear();
+                    Reader.Close();
+                    connectionBD.Close();
                 }
                 else
-                {                   
-                    MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Apellido, Cedula, Fecha_Nacimiento FROM btxxzyr0ildyylyibkf2.Representante WHERE Cedula= @ced;", connectionBD);
-                    cmd.Parameters.AddWithValue("@ced", cedula);
+                {
+                    Command.Connection = connectionBD;
+                    Command.CommandText = "USUCEDREPRESENTANTE";
+                    Command.CommandType = CommandType.StoredProcedure;
+                    Command.Parameters.AddWithValue("@ced", cedula);
                     MySqlDataAdapter adap = new MySqlDataAdapter();
-                    adap.SelectCommand = cmd;
+                    adap.SelectCommand = Command;
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
                     adap.Fill(ds);
+                    connectionBD.Open();
+                    Reader = Command.ExecuteReader();
                     tabla = ds.Tables[0];
                     listper.Items.Clear();
                     for (int i = 0; i < tabla.Rows.Count; i++)
                     {
                         llenarlist(i, tabla, listper);
                     }
+                    Command.Parameters.Clear();
+                    Reader.Close();
+                    connectionBD.Close();
                 }
             }
         }
@@ -310,10 +370,12 @@ namespace ProyectoCS.Datos
             {
                 connectionBD.Open();
                 string busc = txtBusc.Text;
+                Command.Connection = connectionBD;
+                Command.CommandText = "BUSCREPRESENTANTE";
+                Command.CommandType = CommandType.StoredProcedure;
                 //Buscamos los datos del recluso con la condicion de la cedula
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM btxxzyr0ildyylyibkf2.Representante WHERE Cedula = @busc ;", connectionBD);
-                cmd.Parameters.AddWithValue("@busc", busc);
-                reader = cmd.ExecuteReader();
+                Command.Parameters.AddWithValue("@busc", busc);
+                reader = Command.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -338,6 +400,8 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
+                reader.Close();
                 connectionBD.Close();
             }
         }
@@ -352,12 +416,17 @@ namespace ProyectoCS.Datos
 
             try
             {
-
+                Command.Connection = connectionBD;
+                Command.CommandText = "ACTUREPRESENTANTE";
+                Command.CommandType = CommandType.StoredProcedure;
                 //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
-                MySqlCommand cmd = new MySqlCommand("UPDATE `btxxzyr0ildyylyibkf2`.`Representante` SET `Nombre` = '" + nom + "', `Apellido` = '" + ape +
-                   "', `Fecha_Nacimiento` = '" + fech + "', `Especialidad` = '" + esp + "' WHERE `Cedula` = '" + busc + "';", connectionBD);
+                Command.Parameters.AddWithValue("@bus", busc);
+                Command.Parameters.AddWithValue("@nom", nom);
+                Command.Parameters.AddWithValue("@ape", ape);
+                Command.Parameters.AddWithValue("@fech", fech);
+                Command.Parameters.AddWithValue("@esp", esp);
                 connectionBD.Open();
-                cmd.ExecuteNonQuery();
+                Command.ExecuteNonQuery();
 
 
                 MessageBox.Show("Representante Actualizado...");
@@ -369,6 +438,7 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
                 connectionBD.Close();
             }
         }
@@ -377,11 +447,21 @@ namespace ProyectoCS.Datos
         {
             try
             {
+                Command.Connection = connectionBD;
+                Command.CommandText = "CREACTIVIDAD";
+                Command.CommandType = CommandType.StoredProcedure;
+                //Se manda los datos de la actividad que fueron ingresados a la base de datos para que puedan ser guardados
+                Command.Parameters.AddWithValue("@id", id);
+                Command.Parameters.AddWithValue("@nom", nombre);
+                Command.Parameters.AddWithValue("@val", valor);
+                Command.Parameters.AddWithValue("@tip", tipo);
+                Command.Parameters.AddWithValue("@dias", dias);
+                Command.Parameters.AddWithValue("@rep", representante);
+                Command.Parameters.AddWithValue("@hor", hora);
+                Command.Parameters.AddWithValue("@cup", cupos);
                 connectionBD.Open();
-                //Se manda los datos del recluso que fueron ingresados a la base de datos para que puedan ser guardados
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `btxxzyr0ildyylyibkf2`.`Actividad` (`Id_Actividad`, `Nombre`, `Valor`, `Tipo` , `Representante`, `Dia`, `Hora`, `Cupo`) " +
-                    "VALUES ('" + id + "','" + nombre + "','" + valor + "','" + tipo + "','" + representante + "','" + dias + "','" + hora + "','" + cupos + "');", connectionBD);
-                cmd.ExecuteNonQuery();
+                Command.ExecuteNonQuery();
+                MessageBox.Show("Actividad Creada...");
 
             }
             catch (MySqlException ex)
@@ -390,6 +470,7 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
                 connectionBD.Close();
             }
         }
@@ -400,10 +481,12 @@ namespace ProyectoCS.Datos
             {
                 connectionBD.Open();
                 string busc = txtbusc.Text;
-                //Buscamos los datos del recluso con la condicion de la cedula
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM btxxzyr0ildyylyibkf2.Actividad WHERE Id_Actividad = @busc ;", connectionBD);
-                cmd.Parameters.AddWithValue("@busc", busc);
-                reader = cmd.ExecuteReader();
+                //Buscamos los datos de la actividad
+                Command.Connection = connectionBD;
+                Command.CommandText = "BUSCACTIVIDAD";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@busc", busc);
+                reader = Command.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -431,6 +514,8 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
+                reader.Close();
                 connectionBD.Close();
             }
         }
@@ -448,15 +533,20 @@ namespace ProyectoCS.Datos
 
             try
             {
-
-                //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
-                MySqlCommand cmd = new MySqlCommand("UPDATE `btxxzyr0ildyylyibkf2`.`Actividad` SET `Nombre` = '" + nom + "', `Valor` = '" + val +
-                   "', `Tipo` = '" + tip + "', `Representante` = '" + repre + "', `Dia` = '" + dias + "'" +
-                   ", `Hora` = '" + hora + "', `Cupo` = '" + cup + "' WHERE `Id_Actividad` = '" + busc + "';", connectionBD);
+                Command.Connection = connectionBD;
+                Command.CommandText = "MODACTIVIDAD";
+                Command.CommandType = CommandType.StoredProcedure;
+                //Se manda los datos del recluso que fueron ingresados a la base de datos para que puedan ser guardados
+                Command.Parameters.AddWithValue("@bus", busc);
+                Command.Parameters.AddWithValue("@nom", nom);
+                Command.Parameters.AddWithValue("@val", val);
+                Command.Parameters.AddWithValue("@tip", tip);
+                Command.Parameters.AddWithValue("@dias", dias);
+                Command.Parameters.AddWithValue("@rep", repre);
+                Command.Parameters.AddWithValue("@hor", hora);
+                Command.Parameters.AddWithValue("@cup", cup);
                 connectionBD.Open();
-                cmd.ExecuteNonQuery();
-
-
+                Command.ExecuteNonQuery();
                 MessageBox.Show("Actividad Actualizada...");
 
             }
@@ -466,18 +556,23 @@ namespace ProyectoCS.Datos
             }
             finally
             {
+                Command.Parameters.Clear();
                 connectionBD.Close();
             }
         }
 
         internal void Llenar_horario(ListView lstvHorario)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Nombre, Dia, Cupo, Hora FROM btxxzyr0ildyylyibkf2.Actividad;", connectionBD);
+            connectionBD.Open();
+            Command.Connection = connectionBD;
+            Command.CommandText = "LLENARHORARIOS";
+            Command.CommandType = CommandType.StoredProcedure;
             MySqlDataAdapter adap = new MySqlDataAdapter();
-            adap.SelectCommand = cmd;
+            adap.SelectCommand = Command;
             DataSet ds = new DataSet();
             DataTable tabla = new DataTable();
             adap.Fill(ds);
+            Command.ExecuteNonQuery();
             tabla = ds.Tables[0];
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
@@ -488,6 +583,8 @@ namespace ProyectoCS.Datos
                 elementos.SubItems.Add(filas["Hora"].ToString());
                 lstvHorario.Items.Add(elementos);
             }
+            Command.Parameters.Clear();
+            connectionBD.Close();
         }
 
         internal void Buscar_Actividades(string id, ListView lstvActividades)
@@ -496,20 +593,26 @@ namespace ProyectoCS.Datos
             {
                 llenarlist2_1(lstvActividades);
             }
-            else { 
-                MySqlCommand cmd = new MySqlCommand("SELECT Id_Actividad, Nombre, Valor, Tipo, Representante  FROM btxxzyr0ildyylyibkf2.Actividad WHERE Id_Actividad= @id;", connectionBD);
-                cmd.Parameters.AddWithValue("@id", id);
+            else {
+                Command.Connection = connectionBD;
+                Command.CommandText = "TBUSCACTIVIDAD";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", id);
                 MySqlDataAdapter adap = new MySqlDataAdapter();
-                adap.SelectCommand = cmd;
+                adap.SelectCommand = Command;
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adap.Fill(ds);
+                connectionBD.Open();
+                Command.ExecuteNonQuery();
                 lstvActividades.Items.Clear();
                 tabla = ds.Tables[0];
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
                     llenarlist2(i, tabla, lstvActividades);
                 }
+                Command.Parameters.Clear();
+                connectionBD.Close();
             }
         }
 
@@ -527,29 +630,25 @@ namespace ProyectoCS.Datos
 
         internal void llenarlist2_1(ListView lstvActividades)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Id_Actividad, Nombre, Valor, Tipo, Representante  FROM btxxzyr0ildyylyibkf2.Actividad", connectionBD);
+            Command.Connection = connectionBD;
+            Command.CommandText = "TBUSCACTIVIDAD2";
+            Command.CommandType = CommandType.StoredProcedure;
             MySqlDataAdapter adap = new MySqlDataAdapter();
-            adap.SelectCommand = cmd;
+            adap.SelectCommand = Command;
             DataSet ds = new DataSet();
             DataTable tabla = new DataTable();
             adap.Fill(ds);
+            connectionBD.Open();
+            Command.ExecuteNonQuery();
             lstvActividades.Items.Clear();
             tabla = ds.Tables[0];
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 llenarlist2(i, tabla, lstvActividades);
             }
+            Command.Parameters.Clear();
+            connectionBD.Close();
         }
-
-        internal void ReportRepresentante(ReportViewer reportRepres)
-        {
-            string Reportes = "Representante";
-            DataTable tabla = new DataTable();
-            MySqlDataAdapter cmd = new MySqlDataAdapter("SELECT * FROM btxxzyr0ildyylyibkf2.Representante", connectionBD);
-            cmd.Fill(tabla);
-            Reporte(tabla, reportRepres, Reportes);
-        }
-
         private void Reporte(DataTable tabla, ReportViewer reporte, string datos)
         {
             reporte.LocalReport.DataSources.Clear();
@@ -558,6 +657,21 @@ namespace ProyectoCS.Datos
             reporte.RefreshReport();
         }
 
-
+        internal void ReportRepresentante(ReportViewer reportRepres)
+        {
+            string Reportes = "Representante";
+            DataTable tabla = new DataTable();
+            MySqlDataAdapter adap = new MySqlDataAdapter();
+            Command.Connection = connectionBD;
+            Command.CommandText = "REPORREPRESENTANTE";
+            Command.CommandType = CommandType.StoredProcedure;
+            connectionBD.Open();
+            Command.ExecuteNonQuery();
+            adap.SelectCommand = Command;
+            adap.Fill(tabla);
+            Reporte(tabla, reportRepres, Reportes);
+            Command.Parameters.Clear();
+            connectionBD.Close();
+        }
     }
 }
