@@ -16,11 +16,11 @@ namespace ProyectoCS.Formularios.General
 {
     public partial class InfRespActi : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Informes Inf = new Informes();
         public InfRespActi()
         {
             InitializeComponent();
-            Bd.ReportRepresentante(ReportRepres);
+            Inf.ReportRepresentante(ReportRepres);
         }
 
         //Regresamos al formulatio anterior

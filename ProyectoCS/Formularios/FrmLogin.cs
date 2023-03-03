@@ -14,7 +14,7 @@ namespace ProyectoCS
 {
     public partial class FrmLogin : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Login Log = new Login();
         public FrmLogin()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace ProyectoCS
                 }else
                 {
                     //Mandamos a validar el usuario ingresado a ver si consta dentro de la base de datos
-                    contrane = Bd.login(usuario, clave);
+                    contrane = Log.login(usuario, clave);
                     if (contrane == true)
                     {
                         this.Hide();

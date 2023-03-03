@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoCS.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace ProyectoCS.Formularios.General
 {
     public partial class InfRecluso : Form
     {
+        Informes Inf = new Informes();
         public InfRecluso()
         {
             InitializeComponent();
+            Inf.ReportRecluso(ReportRecluso);
         }
         //Regresamos al formulatio anterior
         private void LblRegr_Click(object sender, EventArgs e)
@@ -22,6 +25,12 @@ namespace ProyectoCS.Formularios.General
             FrmGeneral FrmGene = new FrmGeneral();
             FrmGene.Show();
             this.Close();
+        }
+
+        private void InfRecluso_Load(object sender, EventArgs e)
+        {
+
+            this.ReportRecluso.RefreshReport();
         }
     }
 }

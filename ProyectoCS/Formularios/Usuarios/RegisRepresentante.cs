@@ -14,7 +14,7 @@ namespace ProyectoCS.Formularios.Usuarios
 {
     public partial class RegisRepresentante : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Representante Rep = new Representante();
         public RegisRepresentante()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace ProyectoCS.Formularios.Usuarios
             }
             else
             {
-                Bd.DatosRepresentante(Nombre, Apellido, Cedula, FechaNac, Especialidad);
+                Rep.DatosRepresentante(Nombre, Apellido, Cedula, FechaNac, Especialidad);
                 limpiar();
             }
             

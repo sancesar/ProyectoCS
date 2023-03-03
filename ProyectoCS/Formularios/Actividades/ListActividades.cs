@@ -13,11 +13,11 @@ namespace ProyectoCS.Formularios.Actividades
 {
     public partial class ListActividades : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Actividad Act = new Actividad();
         public ListActividades()
         {
             InitializeComponent();
-            Bd.llenarlist2_1(LstvActividades);
+            Act.llenarlist2_1(LstvActividades);
         }
         //Regresamos al formulatio anterior
         private void LblRegr_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace ProyectoCS.Formularios.Actividades
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             string Id = Txtid.Text;
-            Bd.Buscar_Actividades(Id, LstvActividades);
+            Act.Buscar_Actividades(Id, LstvActividades);
         }
     }
 }

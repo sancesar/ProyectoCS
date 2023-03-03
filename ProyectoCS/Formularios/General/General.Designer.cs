@@ -126,11 +126,11 @@
             // 
             this.Lblinfrecl.AutoSize = true;
             this.Lblinfrecl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblinfrecl.Location = new System.Drawing.Point(203, 117);
+            this.Lblinfrecl.Location = new System.Drawing.Point(214, 118);
             this.Lblinfrecl.Name = "Lblinfrecl";
-            this.Lblinfrecl.Size = new System.Drawing.Size(257, 16);
+            this.Lblinfrecl.Size = new System.Drawing.Size(143, 16);
             this.Lblinfrecl.TabIndex = 26;
-            this.Lblinfrecl.Text = "Informe de reclusos inscritos por actividad";
+            this.Lblinfrecl.Text = "Informe de actividades";
             this.Lblinfrecl.Click += new System.EventHandler(this.Lblinfrecl_Click);
             // 
             // Btnusu
@@ -244,10 +244,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoCS.Properties.Resources.Captura_de_pantalla_2022_12_30_210510;
-            this.pictureBox1.Location = new System.Drawing.Point(564, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(565, 97);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(249, 133);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;

@@ -13,7 +13,7 @@ namespace ProyectoCS.Formularios.Usuarios
 {
     public partial class ModRecluso : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Recluso Re = new Recluso();
         public ModRecluso()
         {
             InitializeComponent();
@@ -29,12 +29,12 @@ namespace ProyectoCS.Formularios.Usuarios
         private void Btnbusc_Click(object sender, EventArgs e)
         {
             TxtBusc.Enabled = false;
-            Bd.BuscarEdiRecl(TxtBusc,Txtnom, Txtape, Txtfech, Txtcond, Txtexp);
+            Re.BuscarEdiRecl(TxtBusc,Txtnom, Txtape, Txtfech, Txtcond, Txtexp);
         }
 
         private void btnmod_Click(object sender, EventArgs e)
         {
-            Bd.ActulizarRecl(TxtBusc,Txtnom, Txtape, Txtfech, Txtcond, Txtexp);
+            Re.ActulizarRecl(TxtBusc,Txtnom, Txtape, Txtfech, Txtcond, Txtexp);
             Limpiar();
         }
         private void BtnCancelar_Click(object sender, EventArgs e)

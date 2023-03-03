@@ -14,7 +14,7 @@ namespace ProyectoCS.Formularios.Actividades
 {
     public partial class ModificarActividad : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Actividad Act = new Actividad();
         public ModificarActividad()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace ProyectoCS.Formularios.Actividades
         private void CmbRepr_Click(object sender, EventArgs e)
         {
             CmbRepr.Items.Clear();
-            Bd.llenarCombo(CmbRepr);
+            Act.llenarCombo(CmbRepr);
         }
         private void limpiar()
         {
@@ -60,12 +60,12 @@ namespace ProyectoCS.Formularios.Actividades
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             Txtbusc.Enabled = false;
-            Bd.Buscar_Actividad(Txtbusc, Txtnomact, Txtval, Cmbtip, Txtdias, CmbRepr, Txthora, Txtcup);
+            Act.Buscar_Actividad(Txtbusc, Txtnomact, Txtval, Cmbtip, Txtdias, CmbRepr, Txthora, Txtcup);
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            Bd.Modificar_Actividad(Txtbusc, Txtnomact, Txtval, Cmbtip, Txtdias, CmbRepr, Txthora, Txtcup);
+            Act.Modificar_Actividad(Txtbusc, Txtnomact, Txtval, Cmbtip, Txtdias, CmbRepr, Txthora, Txtcup);
             limpiar();
         }
     }

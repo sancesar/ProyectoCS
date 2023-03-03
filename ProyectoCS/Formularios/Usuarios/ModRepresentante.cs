@@ -14,7 +14,7 @@ namespace ProyectoCS.Formularios.Usuarios
 {
     public partial class ModRepresentante : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Representante Rep = new Representante();
         public ModRepresentante()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace ProyectoCS.Formularios.Usuarios
 
         private void BtnModficar_Click(object sender, EventArgs e)
         {
-            Bd.ActulizarRepr(TxtBusc, Txtnom, Txtape, Txtfech, Txtesp);
+            Rep.ActulizarRepr(TxtBusc, Txtnom, Txtape, Txtfech, Txtesp);
             Limpiar();
         }
         private void Limpiar()
@@ -51,7 +51,7 @@ namespace ProyectoCS.Formularios.Usuarios
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             TxtBusc.Enabled = false;
-            Bd.BuscarEdiRepr(TxtBusc, Txtnom, Txtape, Txtfech, Txtesp);
+            Rep.BuscarEdiRepr(TxtBusc, Txtnom, Txtape, Txtfech, Txtesp);
         }
 
         private void label2_Click(object sender, EventArgs e)

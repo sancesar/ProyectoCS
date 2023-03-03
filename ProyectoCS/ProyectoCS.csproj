@@ -107,6 +107,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\Validaciones.cs" />
+    <Compile Include="Datos\Actividad.cs" />
+    <Compile Include="Datos\DBContext.cs" />
+    <Compile Include="Datos\Informes.cs" />
+    <Compile Include="Datos\Login.cs" />
+    <Compile Include="Datos\Recluso.cs" />
+    <Compile Include="Datos\Representante.cs" />
+    <Compile Include="Datos\Usuario.cs" />
     <Compile Include="Formularios\Actividades\CreacionActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,8 +210,6 @@
     <Compile Include="Formularios\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Datos\ConnectBDD.cs" />
-    <Compile Include="Datos\ConnectBDD2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -274,6 +279,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Actividades.rdlc" />
+    <EmbeddedResource Include="Reportes\Reclusos.rdlc" />
     <EmbeddedResource Include="Reportes\Representante.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

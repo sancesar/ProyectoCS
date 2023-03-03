@@ -16,7 +16,7 @@ namespace ProyectoCS.Formularios.Actividades
 {
     public partial class CreacionActividad : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Actividad Act = new Actividad();
         public CreacionActividad()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace ProyectoCS.Formularios.Actividades
         private void CmbRepr_Click(object sender, EventArgs e)
         {
             CmbRepr.Items.Clear();
-            Bd.llenarCombo(CmbRepr);
+            Act.llenarCombo(CmbRepr);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace ProyectoCS.Formularios.Actividades
             }
             else
             {
-                Bd.Creacion_Actividad(Id, Nombre, Valor, Tipo, Dias, Representante, Hora, Cupos);
+                Act.Creacion_Actividad(Id, Nombre, Valor, Tipo, Dias, Representante, Hora, Cupos);
                 limpiar();
 
             }

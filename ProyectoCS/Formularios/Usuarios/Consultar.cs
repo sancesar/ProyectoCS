@@ -14,7 +14,7 @@ namespace ProyectoCS.Formularios.Usuarios
 {
     public partial class Consultar : Form
     {
-        ConnectBDD Bd = new ConnectBDD();
+        Usuario Usu = new Usuario();
         public Consultar()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace ProyectoCS.Formularios.Usuarios
             string Usuario = Cmbusuario.Text;
             string Cedula = txtced.Text;
 
-            Bd.BuscarUsuario(Usuario, Cedula, Listper);
+            Usu.BuscarUsuario(Usuario, Cedula, Listper);
         }
     }
 }

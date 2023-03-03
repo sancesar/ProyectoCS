@@ -16,7 +16,7 @@ namespace ProyectoCS.Formularios.Usuarios
     public partial class RegisRecluso : Form
     {
         Validaciones val = new Validaciones();
-        ConnectBDD Bd = new ConnectBDD();
+        Recluso Re = new Recluso();
         public RegisRecluso()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace ProyectoCS.Formularios.Usuarios
             }
             else
             {
-                Bd.DatosRecluso(Nombre, Apellido, Cedula, FechaNac, Condena, Expediente);
+                Re.DatosRecluso(Nombre, Apellido, Cedula, FechaNac, Condena, Expediente);
 
             }
             limpiar();
