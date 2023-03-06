@@ -28,330 +28,236 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Lblinfresp = new System.Windows.Forms.Label();
-            this.Lblinfcond = new System.Windows.Forms.Label();
-            this.Lblinfrecl = new System.Windows.Forms.Label();
-            this.Btnusu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Btnact = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LblCerrar = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.Btngen = new System.Windows.Forms.Button();
+            this.Btnusu = new System.Windows.Forms.Button();
+            this.LblCerrar = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label11
+            // button1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(203, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(339, 16);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "---------------------------------------------------------------------------------" +
-    "--";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Image = global::ProyectoCS.Properties.Resources._01048c13b26dae56c0f27227b1da2f981;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 48);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 58);
+            this.button1.TabIndex = 79;
+            this.button1.Text = "Actividades";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Btnact_Click);
             // 
-            // label10
+            // pictureBox1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(203, 282);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(339, 16);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "---------------------------------------------------------------------------------" +
-    "--";
+            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources.solo_letras;
+            this.pictureBox1.Location = new System.Drawing.Point(47, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(76, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 80;
+            this.pictureBox1.TabStop = false;
             // 
-            // label9
+            // pictureBox11
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(203, 149);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(339, 16);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "---------------------------------------------------------------------------------" +
-    "--";
+            this.pictureBox11.Image = global::ProyectoCS.Properties.Resources._1295656;
+            this.pictureBox11.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 81;
+            this.pictureBox11.TabStop = false;
             // 
-            // label8
+            // Btngen
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(203, 214);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(339, 16);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "---------------------------------------------------------------------------------" +
-    "--";
-            // 
-            // Lblinfresp
-            // 
-            this.Lblinfresp.AutoSize = true;
-            this.Lblinfresp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblinfresp.Location = new System.Drawing.Point(203, 251);
-            this.Lblinfresp.Name = "Lblinfresp";
-            this.Lblinfresp.Size = new System.Drawing.Size(307, 16);
-            this.Lblinfresp.TabIndex = 30;
-            this.Lblinfresp.Text = "Informe de personas responsables de la actividad";
-            this.Lblinfresp.Click += new System.EventHandler(this.Lblinfresp_Click);
-            // 
-            // Lblinfcond
-            // 
-            this.Lblinfcond.AutoSize = true;
-            this.Lblinfcond.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblinfcond.Location = new System.Drawing.Point(203, 180);
-            this.Lblinfcond.Name = "Lblinfcond";
-            this.Lblinfcond.Size = new System.Drawing.Size(340, 16);
-            this.Lblinfcond.TabIndex = 28;
-            this.Lblinfcond.Text = "Informe de reclusos con menos de 100 dias de condena";
-            this.Lblinfcond.Click += new System.EventHandler(this.Lblinfcond_Click);
-            // 
-            // Lblinfrecl
-            // 
-            this.Lblinfrecl.AutoSize = true;
-            this.Lblinfrecl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblinfrecl.Location = new System.Drawing.Point(214, 118);
-            this.Lblinfrecl.Name = "Lblinfrecl";
-            this.Lblinfrecl.Size = new System.Drawing.Size(143, 16);
-            this.Lblinfrecl.TabIndex = 26;
-            this.Lblinfrecl.Text = "Informe de actividades";
-            this.Lblinfrecl.Click += new System.EventHandler(this.Lblinfrecl_Click);
+            this.Btngen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.Btngen.FlatAppearance.BorderSize = 0;
+            this.Btngen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btngen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btngen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btngen.Image = global::ProyectoCS.Properties.Resources.documents_files_icon_1446541;
+            this.Btngen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btngen.Location = new System.Drawing.Point(0, 106);
+            this.Btngen.Margin = new System.Windows.Forms.Padding(2);
+            this.Btngen.Name = "Btngen";
+            this.Btngen.Size = new System.Drawing.Size(130, 58);
+            this.Btngen.TabIndex = 82;
+            this.Btngen.Text = "General";
+            this.Btngen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btngen.UseVisualStyleBackColor = false;
             // 
             // Btnusu
             // 
-            this.Btnusu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Btnusu.Location = new System.Drawing.Point(4, 244);
+            this.Btnusu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.Btnusu.FlatAppearance.BorderSize = 0;
+            this.Btnusu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnusu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnusu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btnusu.Image = global::ProyectoCS.Properties.Resources._4562122;
+            this.Btnusu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btnusu.Location = new System.Drawing.Point(0, 165);
+            this.Btnusu.Margin = new System.Windows.Forms.Padding(2);
             this.Btnusu.Name = "Btnusu";
-            this.Btnusu.Size = new System.Drawing.Size(158, 38);
-            this.Btnusu.TabIndex = 24;
+            this.Btnusu.Size = new System.Drawing.Size(130, 58);
+            this.Btnusu.TabIndex = 83;
             this.Btnusu.Text = "Usuario";
+            this.Btnusu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btnusu.UseVisualStyleBackColor = false;
             this.Btnusu.Click += new System.EventHandler(this.Btnusu_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
-            this.button2.Location = new System.Drawing.Point(4, 165);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 38);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "General";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // Btnact
-            // 
-            this.Btnact.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Btnact.Location = new System.Drawing.Point(4, 89);
-            this.Btnact.Name = "Btnact";
-            this.Btnact.Size = new System.Drawing.Size(158, 38);
-            this.Btnact.TabIndex = 22;
-            this.Btnact.Text = "Actividades";
-            this.Btnact.UseVisualStyleBackColor = false;
-            this.Btnact.Click += new System.EventHandler(this.Btnact_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(405, 29);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Sistema de Gestion de una carcel";
             // 
             // LblCerrar
             // 
             this.LblCerrar.AutoSize = true;
-            this.LblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCerrar.Location = new System.Drawing.Point(720, 27);
+            this.LblCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.LblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblCerrar.Location = new System.Drawing.Point(546, 17);
+            this.LblCerrar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCerrar.Name = "LblCerrar";
-            this.LblCerrar.Size = new System.Drawing.Size(87, 16);
-            this.LblCerrar.TabIndex = 52;
+            this.LblCerrar.Size = new System.Drawing.Size(93, 15);
+            this.LblCerrar.TabIndex = 84;
             this.LblCerrar.Text = "Cerrar sesión";
             this.LblCerrar.Click += new System.EventHandler(this.LblCerrar_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox5.Image = global::ProyectoCS.Properties.Resources._93073;
-            this.pictureBox5.Location = new System.Drawing.Point(172, 112);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(35, 29);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 68;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._01048c13b26dae56c0f27227b1da2f98;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 95);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 66;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Lime;
-            this.pictureBox3.Image = global::ProyectoCS.Properties.Resources.documents_files_icon_144654;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 170);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 63;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox8.Image = global::ProyectoCS.Properties.Resources._456212;
-            this.pictureBox8.Location = new System.Drawing.Point(12, 251);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 62;
-            this.pictureBox8.TabStop = false;
-            // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.pictureBox2.Image = global::ProyectoCS.Properties.Resources._25706;
-            this.pictureBox2.Location = new System.Drawing.Point(692, 27);
+            this.pictureBox2.Location = new System.Drawing.Point(523, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(20, 15);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 54;
+            this.pictureBox2.TabIndex = 85;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.LblCerrar_Click);
             // 
-            // pictureBox1
+            // label1
             // 
-            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources.Captura_de_pantalla_2022_12_30_210510;
-            this.pictureBox1.Location = new System.Drawing.Point(565, 97);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(249, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(280, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 33);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "General";
             // 
-            // pictureBox6
+            // button2
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox6.Image = global::ProyectoCS.Properties.Resources._93073;
-            this.pictureBox6.Location = new System.Drawing.Point(172, 174);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 29);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 69;
-            this.pictureBox6.TabStop = false;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(107)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Image = global::ProyectoCS.Properties.Resources._930731;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(188, 123);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(130, 110);
+            this.button2.TabIndex = 87;
+            this.button2.Text = "Informe de Actividades";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Lblinfrecl_Click);
             // 
-            // pictureBox7
+            // button3
             // 
-            this.pictureBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox7.Image = global::ProyectoCS.Properties.Resources._93073;
-            this.pictureBox7.Location = new System.Drawing.Point(172, 244);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(35, 29);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 70;
-            this.pictureBox7.TabStop = false;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(69)))), ((int)(((byte)(110)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Image = global::ProyectoCS.Properties.Resources._930731;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(324, 123);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(130, 110);
+            this.button3.TabIndex = 88;
+            this.button3.Text = "Informe de reclusos con baja condena";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Lblinfcond_Click);
             // 
-            // pictureBox9
+            // button4
             // 
-            this.pictureBox9.Image = global::ProyectoCS.Properties.Resources._1295656;
-            this.pictureBox9.Location = new System.Drawing.Point(602, 16);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(58, 51);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 71;
-            this.pictureBox9.TabStop = false;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Image = global::ProyectoCS.Properties.Resources._930731;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(460, 123);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 110);
+            this.button4.TabIndex = 89;
+            this.button4.Text = "Informe de Resps de Actividad";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Lblinfresp_Click);
             // 
             // FrmGeneral
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 317);
+            this.BackgroundImage = global::ProyectoCS.Properties.Resources.FondoForms;
+            this.ClientSize = new System.Drawing.Size(650, 320);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.LblCerrar);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.Lblinfresp);
-            this.Controls.Add(this.Lblinfcond);
-            this.Controls.Add(this.Lblinfrecl);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Btnusu);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Btnact);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.Btngen);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "General";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label Lblinfresp;
-        private System.Windows.Forms.Label Lblinfcond;
-        private System.Windows.Forms.Label Lblinfrecl;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button Btngen;
         private System.Windows.Forms.Button Btnusu;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Btnact;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblCerrar;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

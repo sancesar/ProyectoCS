@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.txtced = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,48 +38,41 @@
             this.Fech = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.Cmbusuario = new System.Windows.Forms.ComboBox();
-            this.LblRegr = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnBuscar.Location = new System.Drawing.Point(616, 62);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(117, 36);
-            this.BtnBuscar.TabIndex = 36;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = false;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // txtced
             // 
-            this.txtced.Location = new System.Drawing.Point(417, 73);
+            this.txtced.Location = new System.Drawing.Point(337, 110);
             this.txtced.Name = "txtced";
-            this.txtced.Size = new System.Drawing.Size(177, 22);
+            this.txtced.Size = new System.Drawing.Size(95, 20);
             this.txtced.TabIndex = 35;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 72);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(53, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 16);
+            this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 34;
             this.label2.Text = "Seleccionar usuario:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 35);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(235, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 29);
+            this.label1.Size = new System.Drawing.Size(175, 24);
             this.label1.TabIndex = 33;
             this.label1.Text = "Lista de Personas";
             // 
@@ -92,9 +84,9 @@
             this.Ced,
             this.Fech});
             this.Listper.HideSelection = false;
-            this.Listper.Location = new System.Drawing.Point(48, 114);
+            this.Listper.Location = new System.Drawing.Point(56, 149);
             this.Listper.Name = "Listper";
-            this.Listper.Size = new System.Drawing.Size(705, 301);
+            this.Listper.Size = new System.Drawing.Size(554, 187);
             this.Listper.TabIndex = 32;
             this.Listper.UseCompatibleStateImageBehavior = false;
             this.Listper.View = System.Windows.Forms.View.Details;
@@ -102,29 +94,30 @@
             // Nom
             // 
             this.Nom.Text = "Nombre";
-            this.Nom.Width = 200;
+            this.Nom.Width = 141;
             // 
             // Ape
             // 
             this.Ape.Text = "Apellido";
-            this.Ape.Width = 100;
+            this.Ape.Width = 138;
             // 
             // Ced
             // 
             this.Ced.Text = "Cedula";
-            this.Ced.Width = 200;
+            this.Ced.Width = 105;
             // 
             // Fech
             // 
             this.Fech.Text = "Fecha de nacimiento";
-            this.Fech.Width = 200;
+            this.Fech.Width = 166;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(358, 76);
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(288, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 16);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 37;
             this.label3.Text = "Cedula:";
             // 
@@ -134,72 +127,93 @@
             this.Cmbusuario.Items.AddRange(new object[] {
             "Recluso",
             "Representante"});
-            this.Cmbusuario.Location = new System.Drawing.Point(212, 67);
+            this.Cmbusuario.Location = new System.Drawing.Point(152, 110);
             this.Cmbusuario.Name = "Cmbusuario";
-            this.Cmbusuario.Size = new System.Drawing.Size(121, 24);
+            this.Cmbusuario.Size = new System.Drawing.Size(121, 21);
             this.Cmbusuario.TabIndex = 38;
-            // 
-            // LblRegr
-            // 
-            this.LblRegr.AutoSize = true;
-            this.LblRegr.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegr.Location = new System.Drawing.Point(699, 23);
-            this.LblRegr.Name = "LblRegr";
-            this.LblRegr.Size = new System.Drawing.Size(72, 16);
-            this.LblRegr.TabIndex = 39;
-            this.LblRegr.Text = "Regresar";
-            this.LblRegr.Click += new System.EventHandler(this.LblRegr_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources._107122;
-            this.pictureBox1.Location = new System.Drawing.Point(626, 67);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.pictureBox1.Image = global::ProyectoCS.Properties.Resources._1174444;
+            this.pictureBox1.Location = new System.Drawing.Point(543, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.LblRegr_Click);
             // 
-            // pictureBox4
+            // label4
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox4.Image = global::ProyectoCS.Properties.Resources._1174444;
-            this.pictureBox4.Location = new System.Drawing.Point(658, 21);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(35, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 67;
-            this.pictureBox4.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(579, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 15);
+            this.label4.TabIndex = 75;
+            this.label4.Text = "Regresar";
+            this.label4.Click += new System.EventHandler(this.LblRegr_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox2.Image = global::ProyectoCS.Properties.Resources._1295656;
+            this.pictureBox2.Location = new System.Drawing.Point(24, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 104;
+            this.pictureBox2.TabStop = false;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.BtnBuscar.FlatAppearance.BorderSize = 0;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnBuscar.Image = global::ProyectoCS.Properties.Resources._1071221;
+            this.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnBuscar.Location = new System.Drawing.Point(493, 100);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(117, 36);
+            this.BtnBuscar.TabIndex = 105;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // Consultar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::ProyectoCS.Properties.Resources.fondoforms2;
+            this.ClientSize = new System.Drawing.Size(670, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.LblRegr);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Cmbusuario);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.txtced);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Listper);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Consultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox txtced;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -210,8 +224,9 @@
         private System.Windows.Forms.ColumnHeader Fech;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox Cmbusuario;
-        private System.Windows.Forms.Label LblRegr;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button BtnBuscar;
     }
 }

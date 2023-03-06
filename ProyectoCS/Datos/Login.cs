@@ -38,7 +38,7 @@ namespace ProyectoCS.Datos
 
                     if (Convert.ToString(reader["Nombre_de_usu"]) == usu && Convert.ToString(reader["Clave"]) == cla)
                     {
-                        MessageBox.Show("Inicio de sesión excitosa...", "Conectado");
+                        MessageBox.Show("Inicio de sesión exitosa...", "Conectado");
                         //Se abre el formulario 
                         frmAct.Show();
                         return true;

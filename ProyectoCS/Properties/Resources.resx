@@ -118,26 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="documents_files_icon_144654" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documents_files_icon_144654.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="252751" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\252751.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="154346" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\154346.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="25275 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25275 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="25275 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25275 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoforms2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoforms2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="register_login_signup_icon_2199911" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register_login_signup_icon_219991.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modificar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_modify_icon-icons2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_modify_icon-icons.com_72390.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Captura de pantalla 2022-12-30 210510" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captura de pantalla 2022-12-30 210510.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="register_login_signup_icon_219991" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\register_login_signup_icon_219991.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="software security" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\software security.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="93073" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\93073.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="25706" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\25706.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4759901" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\475990.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="87717" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\87717.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4562121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\456212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01048c13b26dae56c0f27227b1da2f981" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01048c13b26dae56c0f27227b1da2f98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3534018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3534018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_modify_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_modify_icon-icons.com_72390.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="695391" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\69539.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoReportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoReportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1295656" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1295656.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,34 +181,94 @@
   <data name="edit_modify_icon-icons.com_72390" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_modify_icon-icons.com_72390.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="66276" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\66276.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="01048c13b26dae56c0f27227b1da2f98" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\01048c13b26dae56c0f27227b1da2f98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="154346" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\154346.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="25275" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\25275.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="101754" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\101754.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="25706" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25706.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1174444" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1174444.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="252752" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25275.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="69539" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\69539.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="solo letras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\solo letras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="930731" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\93073.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="456212" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\456212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="register_login_signup_icon_219991" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register_login_signup_icon_219991.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="475990" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\475990.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3534018" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3534018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="documents_files_icon_144654" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documents_files_icon_144654.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4759902" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\475990.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoforms21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoforms2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modificar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="66276" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\66276.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documents_files_icon_1446541" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documents_files_icon_144654.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="69539" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\69539.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01048c13b26dae56c0f27227b1da2f98" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01048c13b26dae56c0f27227b1da2f98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="107122" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\107122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4562122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\456212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1071221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\107122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1174444" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1174444.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="101754" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\101754.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="93073" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\93073.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="877171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\87717.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoForms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoForms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01048c13b26dae56c0f27227b1da2f982" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01048c13b26dae56c0f27227b1da2f98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="35340181" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3534018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="87717N" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\87717N.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
