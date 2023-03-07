@@ -13,6 +13,7 @@ namespace ProyectoCS.Datos
 {
     public class Informes : DBContext
     {
+        //Llenamos los dintintos reportes deacuerdo a las variables que le llegan
         internal void Reporte(DataTable tabla, ReportViewer reporte, string datos)
         {
             reporte.LocalReport.DataSources.Clear();
@@ -20,13 +21,14 @@ namespace ProyectoCS.Datos
             reporte.LocalReport.DataSources.Add(report);
             reporte.RefreshReport();
         }
-
+        //Informe para Representantes
         public void ReportRepresentante(ReportViewer reportRepres)
         {
             string Reportes = "Representante";
             DataTable tabla = new DataTable();
             MySqlDataAdapter adap = new MySqlDataAdapter();
             Command.Connection = connectionBD;
+            //Llamamos al procedimiento almacenado
             Command.CommandText = "REPORREPRESENTANTE";
             Command.CommandType = CommandType.StoredProcedure;
             connectionBD.Open();
@@ -38,12 +40,14 @@ namespace ProyectoCS.Datos
             connectionBD.Close();
         }
 
+        //Informe para Reclusos
         public void ReportRecluso(ReportViewer reportRecluso)
         {
             string Reportes = "Reclusos";
             DataTable tabla = new DataTable();
             MySqlDataAdapter adap = new MySqlDataAdapter();
             Command.Connection = connectionBD;
+            //Llamamos al procedimiento almacenado
             Command.CommandText = "REPORRECLUSO";
             Command.CommandType = CommandType.StoredProcedure;
             connectionBD.Open();
@@ -55,12 +59,14 @@ namespace ProyectoCS.Datos
             connectionBD.Close();
         }
 
+        //Informe para Actividades
         public void ReportActividades(ReportViewer reportActiv)
         {
             string Reportes = "Actividades";
             DataTable tabla = new DataTable();
             MySqlDataAdapter adap = new MySqlDataAdapter();
             Command.Connection = connectionBD;
+            //Llamamos al procedimiento almacenado
             Command.CommandText = "REPORACTIVIDADES";
             Command.CommandType = CommandType.StoredProcedure;
             connectionBD.Open();

@@ -16,6 +16,7 @@ namespace ProyectoCS.Datos
             //Buscamos la coincidencia que el usuario sea Recluso
             if (usuario == "Recluso")
             {
+                //Muestra todos los reclusos
                 if (cedula == "")
                 {
                     Command.Connection = connectionBD;
@@ -40,7 +41,7 @@ namespace ProyectoCS.Datos
                 }
                 else
                 {
-
+                    //Muestra al recluso buscado por cedula
                     Command.Connection = connectionBD;
                     Command.CommandText = "USUCEDRECLUSO";
                     Command.CommandType = CommandType.StoredProcedure;
@@ -66,6 +67,7 @@ namespace ProyectoCS.Datos
             //Buscamos la coincidencia que el usuario sea representante
             else if (usuario == "Representante")
             {
+                //Muestra todos los representantes
                 if (cedula == "")
                 {
 
@@ -91,6 +93,7 @@ namespace ProyectoCS.Datos
                 }
                 else
                 {
+                    //Muestra al representante buscado por cedula
                     Command.Connection = connectionBD;
                     Command.CommandText = "USUCEDREPRESENTANTE";
                     Command.CommandType = CommandType.StoredProcedure;

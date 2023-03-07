@@ -150,7 +150,7 @@ namespace ProyectoCS.Datos
                 Command.Connection = connectionBD;
                 Command.CommandText = "MODACTIVIDAD";
                 Command.CommandType = CommandType.StoredProcedure;
-                //Se manda los datos del recluso que fueron ingresados a la base de datos para que puedan ser guardados
+                //Se manda los datos de la actividad que fueron ingresados a la base de datos para que puedan ser guardados
                 Command.Parameters.AddWithValue("@bus", busc);
                 Command.Parameters.AddWithValue("@nom", nom);
                 Command.Parameters.AddWithValue("@val", val);
@@ -174,11 +174,12 @@ namespace ProyectoCS.Datos
                 connectionBD.Close();
             }
         }
-
+        //llena los horarios de las actividades
         internal void Llenar_horario(ListView lstvHorario)
         {
             connectionBD.Open();
             Command.Connection = connectionBD;
+            //Llamamos al procedimiento almacenado
             Command.CommandText = "LLENARHORARIOS";
             Command.CommandType = CommandType.StoredProcedure;
             MySqlDataAdapter adap = new MySqlDataAdapter();
@@ -200,16 +201,19 @@ namespace ProyectoCS.Datos
             Command.Parameters.Clear();
             connectionBD.Close();
         }
-
+        //Busca las actividades
         internal void Buscar_Actividades(string id, ListView lstvActividades)
         {
+            //Si no busca una actividad en especifico
             if (string.IsNullOrEmpty(id))
             {
                 llenarlist2_1(lstvActividades);
             }
             else
             {
+                //Si busca una actividad en especifico
                 Command.Connection = connectionBD;
+                //Llamamos al procedimiento almacenado
                 Command.CommandText = "TBUSCACTIVIDAD";
                 Command.CommandType = CommandType.StoredProcedure;
                 Command.Parameters.AddWithValue("@bus", id);
