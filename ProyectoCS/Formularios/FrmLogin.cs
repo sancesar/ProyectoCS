@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProyectoCS.Datos;
+using ProyectoCS.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,12 +43,17 @@ namespace ProyectoCS
                     }
                     else
                     {
-                        MessageBox.Show("Usuario/Clave incorrectas....", "Sistema");
+                        throw new ExceptionLogin();
                     }
                 }
             }catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            catch (ExceptionLogin)
+            {
+                Txtcontr.Clear();
+                Txtusu.Clear();
             }
         }
         //Método que permite terminar la compilacion del programa
