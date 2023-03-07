@@ -123,7 +123,10 @@
     <Compile Include="Datos\Recluso.cs" />
     <Compile Include="Datos\Representante.cs" />
     <Compile Include="Datos\Usuario.cs" />
+    <Compile Include="Excepciones\ExceptionActividad.cs" />
     <Compile Include="Excepciones\ExceptionLogin.cs" />
+    <Compile Include="Excepciones\ExceptionRecluso.cs" />
+    <Compile Include="Excepciones\ExceptionRepresentante.cs" />
     <Compile Include="Formularios\Actividades\CreacionActividad.cs">
       <SubType>Form</SubType>
     </Compile>

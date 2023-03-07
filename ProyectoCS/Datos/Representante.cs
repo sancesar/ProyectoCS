@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ProyectoCS.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -67,14 +68,17 @@ namespace ProyectoCS.Datos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro representante ...");
-
+                    throw new ExceptionRepresentante();
                 }
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
 
+            }
+            catch (ExceptionRepresentante)
+            {
+                txtBusc.Enabled = true;
             }
             finally
             {

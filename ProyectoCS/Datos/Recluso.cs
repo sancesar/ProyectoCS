@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ProyectoCS.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -69,14 +70,19 @@ namespace ProyectoCS.Datos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro recluso...");
-
+                    throw new ExceptionRecluso();
+                    
+                    
                 }
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
 
+            }
+            catch (ExceptionRecluso)
+            {
+                txtBusc.Enabled = true;
             }
             finally
             {

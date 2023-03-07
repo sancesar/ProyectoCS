@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ProyectoCS.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -113,14 +114,17 @@ namespace ProyectoCS.Datos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro Actividad ...");
-
+                    throw new ExceptionActividad();
                 }
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
 
+            }
+            catch (ExceptionActividad)
+            {
+                txtbusc.Enabled = true;
             }
             finally
             {

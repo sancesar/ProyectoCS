@@ -21,7 +21,6 @@ namespace ProyectoCS.Datos
             FrmLogin frmLog = new FrmLogin();
             try
             {
-                connectionBD.Close();
                 connectionBD.Open();
                 MySqlDataReader reader = null;
                 Command.Connection = connectionBD;
@@ -49,6 +48,11 @@ namespace ProyectoCS.Datos
             {
                 MessageBox.Show("" + ex.ToString());
                 return false;
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                connectionBD.Close();
             }
             return false;
         }
