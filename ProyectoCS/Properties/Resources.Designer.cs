@@ -323,6 +323,16 @@ namespace ProyectoCS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8097243 {
+            get {
+                object obj = ResourceManager.GetObject("8097243", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _87717 {
             get {
                 object obj = ResourceManager.GetObject("87717", resourceCulture);

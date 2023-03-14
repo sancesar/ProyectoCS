@@ -1,8 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using ProyectoCS.Excepciones;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -118,6 +120,126 @@ namespace ProyectoCS.Datos
 
 
                 MessageBox.Show("Recluso Actualizado...");
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                connectionBD.Close();
+            }
+        }
+
+        internal void BuscarRec(TextBox txtced, TextBox txtNom, TextBox txtApe)
+        {
+            try
+            {
+                connectionBD.Open();
+                string busc = txtced.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
+                Command.Connection = connectionBD;
+                Command.CommandText = "RECCED";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", busc);
+                reader = Command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //Se llenan los Txt para poder modificarlos
+                        txtNom.Text = reader.GetString(0);
+                        txtApe.Text = reader.GetString(1);
+                    }
+                }
+                else
+                {
+                    throw new ExceptionRecluso();
+
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            catch (ExceptionRecluso)
+            {
+                txtced.Enabled = true;
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                reader.Close();
+                connectionBD.Close();
+            }
+        }
+
+        internal void Fuga(TextBox txtced, TextBox txtvalor)
+        {
+            int dia = 0;
+            int valor = Int32.Parse(txtvalor.Text);
+            try
+            {
+                connectionBD.Open();
+                string busc = txtced.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
+                Command.Connection = connectionBD;
+                Command.CommandText = "TabRecluso";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", busc);
+                reader = Command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        dia = Int32.Parse(reader.GetString(4)); 
+                    }
+                }
+                else
+                {
+                    throw new ExceptionRecluso();
+
+
+                }
+
+                ActFuga(dia, busc, valor);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            catch (ExceptionRecluso)
+            {
+                txtced.Enabled = true;
+            }
+            finally
+            {
+                reader.Close();
+                Command.Parameters.Clear();
+            }
+        }
+
+        private void ActFuga(int dia, string busc, int valor)
+        {
+            dia += valor;
+            string Dia = dia.ToString();
+            try
+            {
+                connectionBD.Close();
+                connectionBD.Open();
+                Command.Parameters.Clear();
+                //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
+                Command.Connection = connectionBD;
+                Command.CommandText = "ACTFUGA";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", busc);
+                Command.Parameters.AddWithValue("@dia", Dia);
+                Command.ExecuteNonQuery();
 
             }
             catch (MySqlException ex)

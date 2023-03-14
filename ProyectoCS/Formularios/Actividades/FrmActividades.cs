@@ -75,5 +75,19 @@ namespace ProyectoCS.Formularios.Actividades
             Hact.Show();
             this.Close();
         }
+
+        private void LblInscrip_Click(object sender, EventArgs e)
+        {
+            Inscripciones Insc = new Inscripciones();
+            Insc.Show();
+            this.Close();
+        }
+
+        private void LblLisInscrip_Click(object sender, EventArgs e)
+        {
+            LisInscrip LInscrip = new LisInscrip();
+            LInscrip.Show();
+            this.Close();
+        }
     }
 }

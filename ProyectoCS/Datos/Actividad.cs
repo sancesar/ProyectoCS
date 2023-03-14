@@ -1,9 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using ProyectoCS.Excepciones;
+using ProyectoCS.Formularios.Actividades;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -263,6 +265,284 @@ namespace ProyectoCS.Datos
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 llenarlist2(i, tabla, lstvActividades);
+            }
+            Command.Parameters.Clear();
+            connectionBD.Close();
+        }
+
+        internal void llenarComboActividad(ComboBox mycombo)
+        {
+            try
+            {
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                DataSet clientds = new DataSet();
+                DataTable clientsTable = new DataTable();
+
+                Command.Connection = connectionBD;
+                Command.CommandText = "ACTIV";
+                Command.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand = Command;
+                dataAdapter.Fill(clientds);
+                connectionBD.Open();
+                Reader = Command.ExecuteReader();
+                clientsTable = clientds.Tables[0];
+
+                try
+                {
+
+                    for (int i = 0; i < clientsTable.Rows.Count; i++)
+                    {
+                        DataRow rowClient = clientsTable.Rows[i];
+                        mycombo.Items.Add(rowClient["Nombre"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
+
+                Command.Parameters.Clear();
+                Reader.Close();
+                connectionBD.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(" " + ex);
+            }
+        }
+
+        internal void llenarHorario(ComboBox cmbtip, TextBox txtdias, TextBox txthora)
+        {
+            try
+            {
+                connectionBD.Open();
+                string busc = cmbtip.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
+                Command.Connection = connectionBD;
+                Command.CommandText = "LLENHORA";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", busc);
+                reader = Command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //Se llenan los Txt para poder modificarlos
+                        txtdias.Text = reader.GetString(0);
+                        txthora.Text = reader.GetString(1);
+                    }
+                }
+                else
+                {
+                    throw new ExceptionRecluso();
+
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                reader.Close();
+                connectionBD.Close();
+            }
+        }
+        internal void Fuga(TextBox txtced, TextBox txtNom, TextBox txtApe, String fecha, TextBox txtMot)
+        {
+            string ced = txtced.Text;
+            string nom = txtNom.Text;
+            string ape = txtApe.Text;
+            string mot = txtMot.Text;
+            try
+            {
+                Command.Connection = connectionBD;
+                Command.CommandText = "PROFUGA";
+                Command.CommandType = CommandType.StoredProcedure;
+                //Se manda los datos de la actividad que fueron ingresados a la base de datos para que puedan ser guardados
+                Command.Parameters.AddWithValue("@ced", ced);
+                Command.Parameters.AddWithValue("@nom", nom);
+                Command.Parameters.AddWithValue("@ape", ape);
+                Command.Parameters.AddWithValue("@mot", mot);
+                Command.Parameters.AddWithValue("@dia", fecha);
+                connectionBD.Open();
+                Command.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                connectionBD.Close();
+            }
+        }
+
+        internal void AgreRecAct(TextBox txtNom, TextBox txtApe, TextBox txtced, ComboBox cmbtip, TextBox txtdias, TextBox txthora)
+        {
+            string nom = txtNom.Text;
+            string ape = txtApe.Text;
+            string ced = txtced.Text;
+            string tip = cmbtip.Text;
+            string dias = txtdias.Text;
+            string hora = txthora.Text;
+
+            try
+            {
+                connectionBD.Close();
+                Command.Connection = connectionBD;
+                Command.CommandText = "AGRERECACT";
+                Command.CommandType = CommandType.StoredProcedure;
+                //Se manda los datos de la actividad y del recluso  que fueron ingresados a la base de datos para que puedan ser guardados
+                Command.Parameters.AddWithValue("@nom", nom);
+                Command.Parameters.AddWithValue("@ape", ape);
+                Command.Parameters.AddWithValue("@ced", ced);
+                Command.Parameters.AddWithValue("@tip", tip);
+                Command.Parameters.AddWithValue("@dia", dias);
+                Command.Parameters.AddWithValue("@hor", hora);
+                connectionBD.Open();
+                Command.ExecuteNonQuery();
+                MessageBox.Show("Recluso agregado a la actividad...");
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                connectionBD.Close();
+            }
+        }
+
+        internal void BuscCupos( ComboBox cmbtip)
+        {
+            int cup = 0;
+            try
+            {
+                connectionBD.Open();
+                string busc = cmbtip.Text;
+                //Buscamos los datos del recluso con la condicion de la cedula
+                Command.Connection = connectionBD;
+                Command.CommandText = "TABACTIVIDAD";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", busc);
+                reader = Command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        cup = Int32.Parse(reader.GetString(7));
+                    }
+                }
+                else
+                {
+                    throw new ExceptionRecluso();
+
+
+                }
+
+                ActCupo(cup, busc);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                reader.Close();
+                Command.Parameters.Clear();
+            }
+        }
+
+        private void ActCupo(int cup, string busc)
+        {
+            cup = cup - 1;
+            string Cup = cup.ToString();
+            try
+            {
+                connectionBD.Close();
+                connectionBD.Open();
+                Command.Parameters.Clear();
+                //Mandamamos los datos modificados a la base de datos para que se pueda actualizar con la condicion que le mandamos
+                Command.Connection = connectionBD;
+                Command.CommandText = "ACTCUPO";
+                Command.CommandType = CommandType.StoredProcedure;
+                Command.Parameters.AddWithValue("@bus", busc);
+                Command.Parameters.AddWithValue("@cup", Cup);
+                Command.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex.ToString());
+            }
+            finally
+            {
+                Command.Parameters.Clear();
+                connectionBD.Close();
+            }
+        }
+
+        internal void LLenarAct1(ListView listact)
+        {
+                //Buscamos los datos del recluso con la condicion de la cedula
+                Command.Connection = connectionBD;
+                Command.CommandText = "BUSCACTRECLU";
+                Command.CommandType = CommandType.StoredProcedure;
+                MySqlDataAdapter adap = new MySqlDataAdapter();
+                adap.SelectCommand = Command;
+                DataSet ds = new DataSet();
+                DataTable tabla = new DataTable();
+                adap.Fill(ds);
+                connectionBD.Open();
+                Command.ExecuteNonQuery();
+                listact.Items.Clear();
+                tabla = ds.Tables[0];
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    llenartabla(i, tabla, listact);
+                }
+                Command.Parameters.Clear();
+                connectionBD.Close();
+        }
+
+        private void llenartabla(int i, DataTable tabla, ListView listact)
+        {
+                DataRow filas = tabla.Rows[i];
+                ListViewItem elementos = new ListViewItem(filas["Nombre"].ToString());
+                elementos.SubItems.Add(filas["Apellido"].ToString());
+                elementos.SubItems.Add(filas["Cedula"].ToString());
+                elementos.SubItems.Add(filas["Tipo"].ToString());
+            listact.Items.Add(elementos);
+        }
+
+        internal void LLenarAct2(ListView listact, string tipo)
+        {
+            //Si busca una actividad en especifico
+            Command.Connection = connectionBD;
+            //Llamamos al procedimiento almacenado
+            Command.CommandText = "BUSCACTRECLU2";
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@busc", tipo);
+            MySqlDataAdapter adap = new MySqlDataAdapter();
+            adap.SelectCommand = Command;
+            DataSet ds = new DataSet();
+            DataTable tabla = new DataTable();
+            adap.Fill(ds);
+            connectionBD.Open();
+            Command.ExecuteNonQuery();
+            listact.Items.Clear();
+            tabla = ds.Tables[0];
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                llenartabla(i, tabla, listact);
             }
             Command.Parameters.Clear();
             connectionBD.Close();

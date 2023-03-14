@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
-            this.txtidact = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.LblRegr = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtidact = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,24 +132,6 @@
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // txtidact
-            // 
-            this.txtidact.Location = new System.Drawing.Point(19, 40);
-            this.txtidact.Margin = new System.Windows.Forms.Padding(2);
-            this.txtidact.Name = "txtidact";
-            this.txtidact.Size = new System.Drawing.Size(72, 20);
-            this.txtidact.TabIndex = 82;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 25);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Id Actividad:";
             // 
             // label8
             // 
@@ -317,6 +299,24 @@
             this.pictureBox1.TabIndex = 104;
             this.pictureBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 25);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Id Actividad:";
+            // 
+            // txtidact
+            // 
+            this.txtidact.Location = new System.Drawing.Point(19, 40);
+            this.txtidact.Margin = new System.Windows.Forms.Padding(2);
+            this.txtidact.Name = "txtidact";
+            this.txtidact.Size = new System.Drawing.Size(72, 20);
+            this.txtidact.TabIndex = 82;
+            // 
             // CreacionActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,12 +362,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtidact;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label LblRegr;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtidact;
+        private System.Windows.Forms.Label label9;
     }
 }

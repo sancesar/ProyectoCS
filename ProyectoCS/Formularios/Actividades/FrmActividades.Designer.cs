@@ -40,6 +40,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,10 +56,10 @@
             this.Btnusu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Btnusu.Image = global::ProyectoCS.Properties.Resources._4562122;
             this.Btnusu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btnusu.Location = new System.Drawing.Point(0, 203);
-            this.Btnusu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btnusu.Location = new System.Drawing.Point(0, 165);
+            this.Btnusu.Margin = new System.Windows.Forms.Padding(2);
             this.Btnusu.Name = "Btnusu";
-            this.Btnusu.Size = new System.Drawing.Size(173, 71);
+            this.Btnusu.Size = new System.Drawing.Size(130, 58);
             this.Btnusu.TabIndex = 39;
             this.Btnusu.Text = "Usuario";
             this.Btnusu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -73,10 +75,10 @@
             this.Btngen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Btngen.Image = global::ProyectoCS.Properties.Resources.documents_files_icon_1446541;
             this.Btngen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btngen.Location = new System.Drawing.Point(0, 130);
-            this.Btngen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btngen.Location = new System.Drawing.Point(0, 106);
+            this.Btngen.Margin = new System.Windows.Forms.Padding(2);
             this.Btngen.Name = "Btngen";
-            this.Btngen.Size = new System.Drawing.Size(173, 71);
+            this.Btngen.Size = new System.Drawing.Size(130, 58);
             this.Btngen.TabIndex = 38;
             this.Btngen.Text = "General";
             this.Btngen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -92,10 +94,10 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Image = global::ProyectoCS.Properties.Resources._01048c13b26dae56c0f27227b1da2f981;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 59);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(0, 48);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 71);
+            this.button1.Size = new System.Drawing.Size(130, 58);
             this.button1.TabIndex = 37;
             this.button1.Text = "Actividades";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,9 +109,10 @@
             this.LblCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.LblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblCerrar.Location = new System.Drawing.Point(728, 21);
+            this.LblCerrar.Location = new System.Drawing.Point(546, 17);
+            this.LblCerrar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCerrar.Name = "LblCerrar";
-            this.LblCerrar.Size = new System.Drawing.Size(111, 18);
+            this.LblCerrar.Size = new System.Drawing.Size(93, 15);
             this.LblCerrar.TabIndex = 51;
             this.LblCerrar.Text = "Cerrar sesión";
             this.LblCerrar.Click += new System.EventHandler(this.LblCerrar_Click);
@@ -118,10 +121,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.pictureBox2.Image = global::ProyectoCS.Properties.Resources._25706;
-            this.pictureBox2.Location = new System.Drawing.Point(697, 22);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(523, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 18);
+            this.pictureBox2.Size = new System.Drawing.Size(20, 15);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
@@ -130,10 +133,10 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::ProyectoCS.Properties.Resources._1295656;
-            this.pictureBox10.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox10.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(47, 43);
+            this.pictureBox10.Size = new System.Drawing.Size(35, 35);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 70;
             this.pictureBox10.TabStop = false;
@@ -141,10 +144,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoCS.Properties.Resources.solo_letras;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(76, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
@@ -158,10 +160,9 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Image = global::ProyectoCS.Properties.Resources._4759902;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(216, 167);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(162, 94);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 111);
+            this.button2.Size = new System.Drawing.Size(110, 90);
             this.button2.TabIndex = 72;
             this.button2.Text = "Lista de Actividades";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -177,10 +178,9 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Image = global::ProyectoCS.Properties.Resources._35340181;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(371, 167);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(278, 94);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 111);
+            this.button3.Size = new System.Drawing.Size(110, 90);
             this.button3.TabIndex = 73;
             this.button3.Text = "Crear Actividad";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -196,10 +196,9 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Image = global::ProyectoCS.Properties.Resources.edit_modify_icon_icons1;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(525, 167);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(394, 94);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(147, 111);
+            this.button4.Size = new System.Drawing.Size(110, 90);
             this.button4.TabIndex = 74;
             this.button4.Text = "Modificar Actividad";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -215,10 +214,9 @@
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.Image = global::ProyectoCS.Properties.Resources._877171;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(680, 167);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Location = new System.Drawing.Point(510, 94);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(147, 111);
+            this.button5.Size = new System.Drawing.Size(110, 90);
             this.button5.TabIndex = 75;
             this.button5.Text = "Horario disponible";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -231,20 +229,57 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(348, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(261, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 42);
+            this.label1.Size = new System.Drawing.Size(176, 33);
             this.label1.TabIndex = 76;
             this.label1.Text = "Actividades";
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(13)))), ((int)(((byte)(149)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Image = global::ProyectoCS.Properties.Resources.edit_modify_icon_icons1;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.Location = new System.Drawing.Point(278, 190);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(110, 90);
+            this.button6.TabIndex = 77;
+            this.button6.Text = "Inscripcciones";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.LblInscrip_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(187)))), ((int)(((byte)(163)))));
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button7.Image = global::ProyectoCS.Properties.Resources._4759902;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button7.Location = new System.Drawing.Point(394, 190);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(110, 90);
+            this.button7.TabIndex = 78;
+            this.button7.Text = "Lista de Inscripciones";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.LblLisInscrip_Click);
+            // 
             // FrmActividades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoCS.Properties.Resources.FondoForms;
-            this.ClientSize = new System.Drawing.Size(867, 394);
+            this.ClientSize = new System.Drawing.Size(650, 320);
             this.ControlBox = false;
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -258,7 +293,7 @@
             this.Controls.Add(this.Btngen);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmActividades";
@@ -285,5 +320,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
