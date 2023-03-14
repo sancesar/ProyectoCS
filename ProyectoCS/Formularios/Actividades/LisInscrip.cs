@@ -44,5 +44,12 @@ namespace ProyectoCS.Formularios.Actividades
             Cmbtipo.Text = " ";
             Act.LLenarAct1(Listact);
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmActividades FrmAct = new FrmActividades();
+            FrmAct.Show();
+            this.Close();
+        }
     }
 }

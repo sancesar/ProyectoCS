@@ -92,5 +92,12 @@ namespace ProyectoCS.Formularios.Actividades
             }
             
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmActividades FrmAct = new FrmActividades();
+            FrmAct.Show();
+            this.Close();
+        }
     }
 }
