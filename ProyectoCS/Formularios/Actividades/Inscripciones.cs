@@ -45,10 +45,12 @@ namespace ProyectoCS.Formularios.Actividades
 
         private void BtnFuga_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show(this, "El Recluso se intento escapar?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show(this, "El recluso cometió alguna infracción?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 Cmbtip.Text = "";
+                Txtdias.Text = "";
+                Txthora.Text = "";
                 Cmbtip.Enabled = false;
                 GrbPena.Visible = true;
             }
@@ -61,30 +63,21 @@ namespace ProyectoCS.Formularios.Actividades
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if(GrbPena.Visible == true)
+            if (GrbPena.Visible == true)
             {
                 String fecha = DateTime.Now.ToLongDateString();
-                Act.Fuga(Txtced, TxtNom, TxtApe,fecha,TxtMot);
-                Re.Fuga(Txtced,TxtValor);
+                Act.Fuga(Txtced, TxtNom, TxtApe, fecha, TxtMot);
+                Re.Fuga(Txtced, TxtValor);
             }
             else
             {
                 Act.BuscCupos(Cmbtip);
-                Act.AgreRecAct(TxtNom, TxtApe, Txtced, Cmbtip,Txtdias,Txthora);
+                Act.AgreRecAct(TxtNom, TxtApe, Txtced, Cmbtip, Txtdias, Txthora);
             }
-            Cmbtip.Enabled = true;
-            Cmbtip.Text = "";
-            TxtNom.Text = "";
-            TxtApe.Text = "";
-            Txtced.Text = "";
-            Txtdias.Text = "";
-            Txthora.Text = "";
-            TxtValor.Text = "";
-            TxtMot.Text = "";
-            GrbPena.Visible = false;
+            Visualización();
         }
 
-        private void Txtced_TextChanged(object sender, EventArgs e)
+            private void Txtced_TextChanged(object sender, EventArgs e)
         {
             if (Txtced.Text.Length.ToString()== "10")
             {
@@ -98,6 +91,25 @@ namespace ProyectoCS.Formularios.Actividades
             FrmActividades FrmAct = new FrmActividades();
             FrmAct.Show();
             this.Close();
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Visualización();
+        }
+
+        private void Visualización()
+        {
+            Cmbtip.Enabled = true;
+            Cmbtip.Text = "";
+            TxtNom.Text = "";
+            TxtApe.Text = "";
+            Txtced.Text = "";
+            Txtdias.Text = "";
+            Txthora.Text = "";
+            TxtValor.Text = "";
+            TxtMot.Text = "";
+            GrbPena.Visible = false;
         }
     }
 }

@@ -196,7 +196,7 @@
             this.BtnFuga.Name = "BtnFuga";
             this.BtnFuga.Size = new System.Drawing.Size(117, 36);
             this.BtnFuga.TabIndex = 110;
-            this.BtnFuga.Text = "Fuga";
+            this.BtnFuga.Text = "Infracción";
             this.BtnFuga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnFuga.UseVisualStyleBackColor = false;
             this.BtnFuga.Click += new System.EventHandler(this.BtnFuga_Click);
@@ -289,6 +289,7 @@
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // Cmbtip
             // 
